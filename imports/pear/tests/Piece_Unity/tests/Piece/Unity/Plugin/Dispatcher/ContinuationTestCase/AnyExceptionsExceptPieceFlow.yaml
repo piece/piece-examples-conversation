@@ -1,0 +1,10 @@
+# $Id: AnyExceptionsExceptPieceFlow.yaml 1022 2007-10-20 13:32:22Z iteman $
+
+firstState: DisplayForm
+
+viewState:
+
+  - name: DisplayForm
+    view: Form
+    activity:
+      method: doActivityOnDisplayForm

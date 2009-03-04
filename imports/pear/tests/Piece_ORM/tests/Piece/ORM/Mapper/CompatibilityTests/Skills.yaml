@@ -1,0 +1,14 @@
+# $Id: Skills.yaml 432 2008-08-23 07:11:52Z iteman $
+
+- name: findAllWithEmployees
+  relationship:
+    - type: manyToMany
+      table: employees
+      mappedAs: employees
+
+# Local Variables:
+# mode: conf-colon
+# coding: iso-8859-1
+# tab-width: 2
+# indent-tabs-mode: nil
+# End:

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: New.xml 351 2007-09-25 13:49:18Z iteman $ -->
+<flow firstState="DisplayNew">
+  <viewState name="DisplayNew" view="New" />
+</flow>

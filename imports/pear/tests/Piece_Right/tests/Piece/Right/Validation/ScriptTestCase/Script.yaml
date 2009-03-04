@@ -1,0 +1,21 @@
+# $Id: Script.yaml 369 2007-07-25 02:44:20Z iteman $
+- name: first_name
+  required:
+  filter:
+    - trim
+  validator:
+    - name: Length
+      rule:
+        max: 255
+
+- name: last_name
+  required:
+  filter:
+    - trim
+  validator:
+    - name: Length
+      rule:
+        max: 255
+
+- name: email
+  required:

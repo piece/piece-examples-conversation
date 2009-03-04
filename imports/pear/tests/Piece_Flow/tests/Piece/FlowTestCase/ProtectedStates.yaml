@@ -1,0 +1,9 @@
+# $Id: ProtectedStates.yaml 357 2007-10-13 19:02:39Z iteman $
+firstState: Stop
+viewState:
+  - name: Stop
+    view: Stop
+  - name: Playingd
+    view: Playing
+  - name: _Stagehand_FSM_State_Initial
+    view: _Stagehand_FSM_State_Initial

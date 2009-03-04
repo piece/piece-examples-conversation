@@ -1,0 +1,11 @@
+# $Id: RuleMessage.yaml 389 2007-10-07 12:23:51Z iteman $
+- name: foo
+  required:
+  validator:
+    - name: Length
+      rule:
+        min: 5
+        min_message: The value is too short.
+        max: 10
+        max_message: The value is too long.
+      message: bar

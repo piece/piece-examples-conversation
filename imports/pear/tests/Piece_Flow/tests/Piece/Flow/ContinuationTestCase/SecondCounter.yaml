@@ -1,0 +1,21 @@
+# $Id: SecondCounter.yaml 331 2007-08-24 12:56:04Z iteman $
+name: SecondCounter
+firstState: DisplayForm
+lastState: { name: Finish, view: Finish }
+viewState:
+  - name: DisplayForm
+    view: SecondCounter
+    entry:
+      class: SecondCounterAction
+      method: setup
+    transition:
+      - event: increase
+        nextState: increased
+        action:
+          class: SecondCounterAction
+          method: increase
+actionState:
+  - name: increased
+    transition:
+      - event: succeed
+        nextState: DisplayForm

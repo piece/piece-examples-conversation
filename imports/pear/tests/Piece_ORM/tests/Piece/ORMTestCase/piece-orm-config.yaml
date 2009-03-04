@@ -1,0 +1,38 @@
+# $Id: piece-orm-config.yaml 336 2008-04-10 05:50:05Z iteman $
+
+- name: database1
+  dsn: pgsql://piece:piece@pieceorm/piece
+  options:
+    debug: 2
+    result_buffering: false
+
+- name: database2
+  dsn: pgsql://piece:piece@pieceorm/piece
+  options:
+    debug: 0
+    result_buffering: false
+
+- name: database3
+  dsn:
+    phptype: pgsql
+    hostspec: pieceorm
+    database: piece
+    username: piece
+    password: piece
+  options:
+    debug: 0
+    result_buffering: false
+
+- name: caseSensitive
+  dsn: pgsql://piece:piece@pieceorm/piece
+  options:
+    debug: 0
+    result_buffering: false
+  useMapperNameAsTableName: true
+
+# Local Variables:
+# mode: conf-colon
+# coding: iso-8859-1
+# tab-width: 2
+# indent-tabs-mode: nil
+# End:

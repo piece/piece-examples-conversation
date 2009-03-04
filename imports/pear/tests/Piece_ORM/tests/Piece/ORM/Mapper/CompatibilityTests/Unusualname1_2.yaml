@@ -1,0 +1,20 @@
+# $Id: Unusualname1_2.yaml 323 2008-03-30 09:53:38Z iteman $
+
+- name: findAll
+  relationship:
+    - type: manyToMany
+      table: unusualname_12
+      mappedAs: baz
+
+- name: insert
+  relationship:
+    - type: manyToMany
+      table: unusualname_12
+      mappedAs: baz
+
+# Local Variables:
+# mode: conf-colon
+# coding: iso-8859-1
+# tab-width: 2
+# indent-tabs-mode: nil
+# End:

@@ -1,0 +1,8 @@
+# $Id: FieldValues.yaml 970 2007-08-11 06:14:21Z iteman $
+- name: foo
+  required:
+  validator:
+    - name: Length
+      rule:
+        min: 1
+        max: 255

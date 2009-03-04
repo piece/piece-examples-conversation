@@ -1,0 +1,16 @@
+# $Id: invalid.yaml 357 2007-10-13 19:02:39Z iteman $
+firstState: starting
+initial:
+  class: Piece_FlowInitialAction
+  method: initialize
+final:
+  class: Piece_FlowInitialAction
+  method: finalize
+viewState:
+  - name: starting
+    view: start
+    transition:
+      - event: go
+        nextState: ending
+actionState:
+  - name: ending

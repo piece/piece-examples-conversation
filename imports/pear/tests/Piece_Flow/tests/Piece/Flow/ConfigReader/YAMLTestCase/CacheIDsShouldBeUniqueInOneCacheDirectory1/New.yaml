@@ -1,0 +1,5 @@
+# $Id: New.yaml 351 2007-09-25 13:49:18Z iteman $
+firstState: DisplayNew
+viewState:
+  - name: DisplayNew
+    view: New

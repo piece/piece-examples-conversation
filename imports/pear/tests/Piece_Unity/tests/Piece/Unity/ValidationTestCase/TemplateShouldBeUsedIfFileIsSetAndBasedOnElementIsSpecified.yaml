@@ -1,0 +1,9 @@
+# $Id: TemplateShouldBeUsedIfFileIsSetAndBasedOnElementIsSpecified.yaml 1030 2007-11-13 14:55:18Z iteman $
+
+- name: firstName
+  description: First Name
+  basedOn: String
+
+- name: lastName
+  description: Last Name
+  basedOn: String
