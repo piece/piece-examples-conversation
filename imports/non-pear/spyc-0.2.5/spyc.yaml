@@ -1,7 +1,7 @@
 #
 #    S P Y C
 #      a simple php yaml class
-#   v0.3
+#   v0.2(.4)
 #
 # author: [chris wanstrath, chris@ozmm.org]
 # websites: [http://www.yaml.org, http://spyc.sourceforge.net/]
@@ -9,8 +9,6 @@
 # copyright: (c) 2005-2006 Chris Wanstrath
 #
 # spyc.yml - A file containing the YAML that Spyc understands.
-
----
 
 # Mappings - with proper types
 String: Anyone's name, really.
@@ -115,18 +113,4 @@ all
   javascripts:     [dom1.js, dom.js]
 
 # Added in .2
-1040: Ooo, a numeric key! # And working comments? Wow! Colons in comments: a menace (0.3).
-
-hash_1: Hash #and a comment
-hash_2: "Hash #and a comment"
-"hash#3": "Hash (#) can appear in key too"
-
-float_test: 1.0
-float_test_with_quotes: '1.0'
-float_inverse_test: 001
-
-a_really_large_number: 115792089237316195423570985008687907853269984665640564039457584007913129639936 # 2^256
-
-# [Endloop]
-endloop: |
-  Does this line in the end indeed make Spyc go to an infinite loop?
+1040: Ooo, a numeric key! # And working comments? Wow!

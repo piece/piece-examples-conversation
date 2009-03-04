@@ -2,7 +2,7 @@
 #
 #    S P Y C
 #      a simple php yaml class
-#   v0.3
+#   v0.2(.5)
 #
 # author: [chris wanstrath, chris@ozmm.org]
 # websites: [http://www.yaml.org, http://spyc.sourceforge.net/]
@@ -18,7 +18,7 @@
 
 error_reporting(E_ALL);
 
-include('spyc.php4');
+include('spyc.php');
 
 $yaml = Spyc::YAMLLoad('spyc.yaml');
 
@@ -44,7 +44,7 @@ if ($yaml['False'] !== false)
 if ($yaml['Zero'] !== 0)
 	die('Key: Zero failed');
 
-if (isset($yaml['Null']))
+if ($yaml['Null'] !== NULL)
 	die('Key: Null failed');
 
 if ($yaml['Float'] !== 5.34)
@@ -153,8 +153,6 @@ if ($yaml[15] != array( 'name' => "Foo, Bar's", 'age' => 20))
 if ($yaml[16] != array( 0 => "a", 1 => array (0 => 1, 1 => 2), 2 => "b"))
 	die("Sequence 16 failed.");
 
-if ($yaml['endloop'] != "Does this line in the end indeed make Spyc go to an infinite loop?")
-	die("[endloop] failed.");
 
 
 print "spyc.yaml parsed correctly\n";

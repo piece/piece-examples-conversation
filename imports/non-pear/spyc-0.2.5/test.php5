@@ -2,7 +2,7 @@
 #
 #    S P Y C
 #      a simple php yaml class
-#   v0.3
+#   v0.2(.5)
 #
 # author: [chris wanstrath, chris@ozmm.org]
 # websites: [http://www.yaml.org, http://spyc.sourceforge.net/]
@@ -16,9 +16,9 @@
 # I dunno, 20 months?  Alright.  Go team.
 #
 
-error_reporting(E_ALL && E_STRICT);
+error_reporting(E_STRICT);
 
-include('spyc.php');
+include('spyc.php5');
 
 $yaml = Spyc::YAMLLoad('spyc.yaml');
 
@@ -44,7 +44,7 @@ if ($yaml['False'] !== false)
 if ($yaml['Zero'] !== 0)
 	die('Key: Zero failed');
 
-if (isset($yaml['Null']))
+if ($yaml['Null'] !== NULL)
 	die('Key: Null failed');
 
 if ($yaml['Float'] !== 5.34)
@@ -153,32 +153,8 @@ if ($yaml[15] != array( 'name' => "Foo, Bar's", 'age' => 20))
 if ($yaml[16] != array( 0 => "a", 1 => array (0 => 1, 1 => 2), 2 => "b"))
 	die("Sequence 16 failed.");
 
-if ($yaml['hash_1'] != 'Hash')
-  die ("Hash 1 failed");
-
-if ($yaml['hash_2'] != 'Hash #and a comment')
-  die ("Hash 2 failed");
-
-if ($yaml['hash#3'] != 'Hash (#) can appear in key too')
-  die ("Hash 3 failed");
-
-if ($yaml['endloop'] != "Does this line in the end indeed make Spyc go to an infinite loop?")
-	die("[endloop] failed.");
-
-if ($yaml['a_really_large_number'] != "115792089237316195423570985008687907853269984665640564039457584007913129639936")
-	die("[a_really_large_number] failed.");
-
-if ($yaml['float_test'] != '1.0')
-  die ("[float_test] failed");
-
-if ($yaml['float_test_with_quotes'] != '1.0')
-  die ("[float_test_with_quotes] failed");
-
-if ($yaml['float_inverse_test'] != '001')
-  die ("[float_inverse_test] failed");
 
 
-print "YAML parse result:\n";
-print_r ($yaml);
+print "spyc.yaml parsed correctly\n";
 
-print "\n\nspyc.yaml parsed correctly\n";
+?>
