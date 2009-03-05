@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2006-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: Validation.php 1158 2008-06-28 08:18:39Z iteman $
+ * @version    GIT: $Id$
  * @see        Piece_Right, Piece_Right_Config, Piece_Right_Results
  * @since      File available since Release 0.7.0
  */
@@ -51,9 +51,9 @@ require_once 'Piece/Right/Config/Factory.php';
  * The validation class for Piece_Unity applications.
  *
  * @package    Piece_Unity
- * @copyright  2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @see        Piece_Right, Piece_Right_Config, Piece_Right_Results
  * @since      Class available since Release 0.7.0
  */

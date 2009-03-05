@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2006-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: Unity.php 1244 2008-08-22 15:04:44Z iteman $
+ * @version    GIT: $Id$
  * @since      File available since Release 0.1.0
  */
 
@@ -43,6 +43,7 @@ require_once 'Piece/Unity/Plugin/Factory.php';
 // {{{ GLOBALS
 
 $GLOBALS['PIECE_UNITY_Root_Plugin'] = 'Root';
+$GLOBALS['PIECE_UNITY_ConfigurationCallback'] = null;
 
 // }}}
 // {{{ Piece_Unity
@@ -51,9 +52,9 @@ $GLOBALS['PIECE_UNITY_Root_Plugin'] = 'Root';
  * A single entry point for Piece_Unity applications.
  *
  * @package    Piece_Unity
- * @copyright  2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @since      Class available since Release 0.1.0
  */
 class Piece_Unity
@@ -177,8 +178,8 @@ class Piece_Unity
     // {{{ createRuntime()
 
     /**
-     * Creates a Piece_Unity object and invokes a given callback for any
-     * configuration.
+     * Creates the Piece_Unity object for the current request, and invokes the given
+     * callback for any configuration.
      *
      * @param callback $callback
      * @return Piece_Unity
@@ -187,8 +188,14 @@ class Piece_Unity
     function &createRuntime($callback = null)
     {
         $runtime = &new Piece_Unity();
-        if (is_callable($callback)) {
+        if (!is_null($callback)) {
             call_user_func_array($callback, array(&$runtime));
+        } else {
+            if (!is_null($GLOBALS['PIECE_UNITY_ConfigurationCallback'])) {
+                call_user_func_array($GLOBALS['PIECE_UNITY_ConfigurationCallback'],
+                                     array(&$runtime)
+                                     );
+            }
         }
 
         return $runtime;
@@ -225,6 +232,21 @@ class Piece_Unity
 
         $context = &Piece_Unity_Context::singleton();
         $context->setConfiguration($this->_config);
+    }
+
+    // }}}
+    // {{{ setConfigurationCallback()
+
+    /**
+     * Sets the given callback as the callback for Piece_Unity::createRuntime().
+     *
+     * @param callback $callback
+     * @throws PIECE_UNITY_ERROR_UNEXPECTED_VALUE
+     * @since Method available since Release 1.7.0
+     */
+    function setConfigurationCallback($callback)
+    {
+        $GLOBALS['PIECE_UNITY_ConfigurationCallback'] = $callback;
     }
 
     /**#@-*/

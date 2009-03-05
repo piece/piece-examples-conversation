@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2007 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2007 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: LowerCase.php 1158 2008-06-28 08:18:39Z iteman $
+ * @version    GIT: $Id: 9216dfb3f73ad6ac8a7ce92c8818c391305798cd $
  * @see        Piece_Unity_Plugin_Configurator_ValidationTestCase
  * @since      File available since Release 0.11.0
  */
@@ -42,9 +42,9 @@
  * A class for unit tests.
  *
  * @package    Piece_Unity
- * @copyright  2007 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @see        Piece_Unity_Plugin_Configurator_ValidationTestCase
  * @since      Class available since Release 0.11.0
  */

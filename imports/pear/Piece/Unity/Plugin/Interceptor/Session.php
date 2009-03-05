@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2006-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: Session.php 1286 2008-09-13 05:32:01Z iteman $
+ * @version    GIT: $Id$
  * @since      File available since Release 0.5.0
  */
 
@@ -44,9 +44,9 @@ require_once 'Piece/Unity/Error.php';
  * An interceptor for session handling.
  *
  * @package    Piece_Unity
- * @copyright  2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @since      Class available since Release 0.5.0
  */
 class Piece_Unity_Plugin_Interceptor_Session extends Piece_Unity_Plugin_Common

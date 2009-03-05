@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2007 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2007 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: NewAction.php 1184 2008-08-18 15:52:15Z iteman $
+ * @version    GIT: $Id: dc2d1c88149c72a56e7af86a9ac940e3472dfa83 $
  * @see        Piece_Unity_Plugin_Dispatcher_ContinuationTestCase
  * @since      File available since Release 1.3.0
  */
@@ -45,9 +45,9 @@ require_once 'Piece/Unity/Service/Continuation.php';
  * A class for unit tests.
  *
  * @package    Piece_Unity
- * @copyright  2007 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @see        Piece_Unity_Plugin_Dispatcher_ContinuationTestCase
  * @since      Class available since Release 1.3.0
  */

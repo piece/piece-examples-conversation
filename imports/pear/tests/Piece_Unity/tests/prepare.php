@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2007-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2007-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,17 +29,17 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2007-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: prepare.php 1158 2008-06-28 08:18:39Z iteman $
+ * @version    GIT: $Id: affa1b756041e7fd1e2215c988df576585676bdf $
  * @since      File available since Release 1.0.0
  */
 
 error_reporting(E_ALL);
 
-if (file_exists(dirname(__FILE__) . '/../Piece/Unity.php')) {
-    set_include_path(realpath(dirname(__FILE__) . '/..') . PATH_SEPARATOR . get_include_path());
-}
+set_include_path(realpath(dirname(__FILE__) . '/..') . PATH_SEPARATOR .
+                 get_include_path()
+                 );
 
 require_once 'PEAR/ErrorStack.php';
 

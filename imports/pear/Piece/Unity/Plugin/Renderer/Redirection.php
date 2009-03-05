@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2006-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: Redirection.php 1186 2008-08-20 04:14:43Z iteman $
+ * @version    GIT: $Id: 2fec90eb651efd2c2f90110c3bdec39652200e40 $
  * @since      File available since Release 0.6.0
  */
 
@@ -44,9 +44,9 @@ require_once 'Piece/Unity/URI.php';
  * A renderer which is used to redirect requests.
  *
  * @package    Piece_Unity
- * @copyright  2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @since      Class available since Release 0.6.0
  */
 class Piece_Unity_Plugin_Renderer_Redirection extends Piece_Unity_Plugin_Common
@@ -178,11 +178,7 @@ class Piece_Unity_Plugin_Renderer_Redirection extends Piece_Unity_Plugin_Common
             }
         }
 
-        if (substr($viewString, 0, 7) == 'http://') {
-            return $uri->getURI();
-        } elseif (substr($viewString, 0, 8) == 'https://') {
-            return $uri->getURI(true);
-        }
+        return $uri->getURI('pass');
     }
 
     /**#@-*/

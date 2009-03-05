@@ -1,4 +1,4 @@
-# $Id: Authentication.yaml 628 2006-12-14 00:56:58Z iteman $
+# $Id$
 - name: login_name
   required:
   validator:

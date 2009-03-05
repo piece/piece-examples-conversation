@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2008-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: SessionTestCase.php 1280 2008-09-12 10:13:45Z iteman $
+ * @version    GIT: $Id: a5a3315e96363866a6f0e925bb638f25ef6a72d6 $
  * @since      File available since Release 1.6.0
  */
 
@@ -47,9 +47,9 @@ require_once 'Piece/Unity/Context.php';
  * Some tests for Piece_Unity_Plugin_Interceptor_Session.
  *
  * @package    Piece_Unity
- * @copyright  2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @since      Class available since Release 1.6.0
  */
 class Piece_Unity_Plugin_Interceptor_SessionTestCase extends PHPUnit_TestCase

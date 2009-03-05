@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2006-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  *               2006-2007 KUMAKURA Yousuke <kumatch@users.sourceforge.net>,
  * All rights reserved.
  *
@@ -31,10 +31,10 @@
  *
  * @package    Piece_Unity
  * @subpackage Piece_Unity_Component_Authentication
- * @copyright  2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @copyright  2006-2007 KUMAKURA Yousuke <kumatch@users.sourceforge.net>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: Authentication.php 1279 2008-09-10 16:10:17Z iteman $
+ * @version    GIT: $Id$
  * @since      File available since Release 0.13.0
  */
 
@@ -56,10 +56,10 @@ $GLOBALS['PIECE_UNITY_Interceptor_Authentication_AuthenticationStateSessionKey']
  *
  * @package    Piece_Unity
  * @subpackage Piece_Unity_Component_Authentication
- * @copyright  2006-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @copyright  2006-2007 KUMAKURA Yousuke <kumatch@users.sourceforge.net>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.1.1
+ * @version    Release: 1.1.2
  * @since      Class available since Release 0.13.0
  */
 class Piece_Unity_Plugin_Interceptor_Authentication extends Piece_Unity_Plugin_Common
@@ -254,13 +254,13 @@ class Piece_Unity_Plugin_Interceptor_Authentication extends Piece_Unity_Plugin_C
             $pathInfo = str_replace('%2F', '/', rawurlencode($_SERVER['PATH_INFO']));
         }
 
-        if ($_SERVER['SERVER_PORT'] != 443) {
-            $protocol = 'http';
-        } else {
+        if ($this->_context->isSecure()) {
             $protocol = 'https';
+        } else {
+            $protocol = 'http';
         }
 
-        if ($_SERVER['SERVER_PORT'] == 80 || $_SERVER['SERVER_PORT'] == 443) {
+        if ($this->_context->isRunningOnStandardPort()) {
             $port = '';
         } else {
             $port = ":{$_SERVER['SERVER_PORT']}";
@@ -268,7 +268,7 @@ class Piece_Unity_Plugin_Interceptor_Authentication extends Piece_Unity_Plugin_C
 
         $this->_authenticationState->setCallbackURI($realm,
                                                     "$protocol://{$_SERVER['SERVER_NAME']}$port" .
-                                                    str_replace('//', '/', $_SERVER['SCRIPT_NAME']) .
+                                                    str_replace('//', '/', $_SERVER['REQUEST_URI']) .
                                                     "$pathInfo$query"
                                                     );
     }

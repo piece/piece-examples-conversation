@@ -1,4 +1,4 @@
-# $Id: TemplateShouldBeUsedIfFileIsSetAndBasedOnElementIsSpecified.yaml 1030 2007-11-13 14:55:18Z iteman $
+# $Id$
 
 - name: firstName
   description: First Name

@@ -1,4 +1,4 @@
-# $Id: piece-unity-config.yaml 1002 2007-10-01 12:04:03Z iteman $
+# $Id$
 
 - name: Controller
   point:

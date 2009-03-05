@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2007-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2007-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2007-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: ValidationTestCase.php 1158 2008-06-28 08:18:39Z iteman $
+ * @version    GIT: $Id: 31b7e660f64e7ca1f98643569fcfda6e6db86438 $
  * @since      File available since Release 0.11.0
  */
 
@@ -51,9 +51,9 @@ require_once 'Cache/Lite/File.php';
  * Some tests for Piece_Unity_Plugin_Configurator_Validation.
  *
  * @package    Piece_Unity
- * @copyright  2007-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @since      Class available since Release 0.11.0
  */
 class Piece_Unity_Plugin_Configurator_ValidationTestCase extends PHPUnit_TestCase
@@ -110,7 +110,7 @@ class Piece_Unity_Plugin_Configurator_ValidationTestCase extends PHPUnit_TestCas
         $_SERVER['REQUEST_METHOD'] = 'POST';
         $_POST['login_name'] = 'iteman';
         $_POST['password'] = 'iteman30';
-        $_POST['email'] = 'iteman@users.sourceforge.net';
+        $_POST['email'] = 'kubo@iteman.jp';
         $_POST['greeting'] = 'Hello World';
 
         $config = &new Piece_Unity_Config();

@@ -1,4 +1,4 @@
-# $Id: ContinuationValidation.yaml 976 2007-08-21 16:17:47Z iteman $
+# $Id$
 firstState: DisplayForm
 viewState:
   - name: DisplayForm

@@ -1,4 +1,4 @@
-// $Id: ahah.js 1058 2007-12-18 08:36:55Z iteman $
+// $Id$
 
 function ahah(url, target, delay, content) {
     if (window.XMLHttpRequest) {

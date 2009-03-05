@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2007-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2007-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2007-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: ControllerTestCase.php 1183 2008-08-16 12:57:46Z iteman $
+ * @version    GIT: $Id: 4d30a0426f350f68cd89ad733dbe0e511900b067 $
  * @since      File available since Release 1.2.0
  */
 
@@ -47,9 +47,9 @@ require_once 'Piece/Unity/Config.php';
  * Some tests for Piece_Unity_Plugin_Controller.
  *
  * @package    Piece_Unity
- * @copyright  2007-2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @since      Class available since Release 1.2.0
  */
 class Piece_Unity_Plugin_ControllerTestCase extends PHPUnit_TestCase
@@ -92,8 +92,8 @@ class Piece_Unity_Plugin_ControllerTestCase extends PHPUnit_TestCase
     function testShouldOverwriteTheViewWithAnArbitraryViewFromAnAction()
     {
         $_GET['_event'] = 'ControllerTestCaseSpecifyingArbitraryViewInActionShouldWork';
-        $oldScriptName = $_SERVER['SCRIPT_NAME'];
-        $_SERVER['SCRIPT_NAME'] = '/foo.php';
+        $oldScriptName = $_SERVER['REQUEST_URI'];
+        $_SERVER['REQUEST_URI'] = '/foo.php';
         $_SERVER['SERVER_NAME'] = 'example.org';
         $_SERVER['SERVER_PORT'] = '80';
         $config = &new Piece_Unity_Config();
@@ -106,7 +106,7 @@ class Piece_Unity_Plugin_ControllerTestCase extends PHPUnit_TestCase
 
         $this->assertEquals('http://example.org/', $context->getView());
 
-        $_SERVER['SCRIPT_NAME'] = $oldScriptName;
+        $_SERVER['REQUEST_URI'] = $oldScriptName;
         unset($_SERVER['SERVER_PORT']);
         unset($_SERVER['SERVER_NAME']);
     }

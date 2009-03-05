@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2008-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: Example.php 1158 2008-06-28 08:18:39Z iteman $
+ * @version    GIT: $Id: 9fbb1ecaea17b1ec8502b3587e9c50d5ba3b7681 $
  * @since      File available since Release 1.5.0
  */
 
@@ -43,9 +43,9 @@ require_once 'Piece/Unity/Plugin/Common.php';
  * A class for unit tests.
  *
  * @package    Piece_Unity
- * @copyright  2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @since      Class available since Release 1.5.0
  */
 class Piece_Unity_Plugin_HTMLComponent_Example extends Piece_Unity_Plugin_Common

@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2006-2007 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2006-2007 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: ContinuationValidationAction.php 1158 2008-06-28 08:18:39Z iteman $
+ * @version    GIT: $Id: 67cefea5e27e7285078b57c87c804669f0d6f68b $
  * @see        Piece_Unity_Plugin_Dispatcher_ContinuationTestCase
  * @since      File available since Release 0.8.0
  */
@@ -44,9 +44,9 @@ require_once 'Piece/Unity/Service/FlowAction.php';
  * An action class for ContinuationValidation.
  *
  * @package    Piece_Unity
- * @copyright  2006-2007 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @see        Piece_Unity_Plugin_Dispatcher_ContinuationTestCase
  * @since      Class available since Release 0.8.0
  */

@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2008 KUBO Atsuhiro <iteman@users.sourceforge.net>,
+ * Copyright (c) 2008-2009 KUBO Atsuhiro <kubo@iteman.jp>,
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package    Piece_Unity
- * @copyright  2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: HTTPStatus.php 1178 2008-08-09 14:09:16Z iteman $
+ * @version    GIT: $Id$
  * @link       http://www.studyinghttp.net/cgi-bin/rfc.cgi?2616#Sec6.1.1
  * @since      File available since Release 1.5.0
  */
@@ -50,9 +50,9 @@ $GLOBALS['PIECE_UNITY_HTTPStatus_SentStatusLine'] = null;
  * the current HTTP response.
  *
  * @package    Piece_Unity
- * @copyright  2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
+ * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.6.2
+ * @version    Release: 1.7.0
  * @link       http://www.studyinghttp.net/cgi-bin/rfc.cgi?2616#Sec6.1.1
  * @since      Class available since Release 1.5.0
  */
