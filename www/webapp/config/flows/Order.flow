@@ -4,12 +4,12 @@ viewState:
   - name: MainMenu
     view: MainMenu
     transition:
-      - event: next
+      - event: selectMainMenu
         nextState: SideMenu
   - name: SideMenu
     view: SideMenu
     transition:
-      - event: confirm
+      - event: selectSideMenu
         nextState: Confirmation
   - name: Confirmation
     view: Confirmation
