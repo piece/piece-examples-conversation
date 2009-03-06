@@ -1,0 +1,20 @@
+firstState: MainMenu
+
+viewState:
+  - name: MainMenu
+    view: MainMenu
+    transition:
+      - event: next
+        nextState: SideMenu
+  - name: SideMenu
+    view: SideMenu
+    transition:
+      - event: confirm
+        nextState: Confirmation
+  - name: Confirmation
+    view: Confirmation
+    transition:
+      - event: finish
+        nextState: Finish
+  - name: Finish
+    view: Finish
