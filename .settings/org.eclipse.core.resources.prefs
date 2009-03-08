@@ -1,4 +1,8 @@
-#Fri Mar 06 23:49:29 JST 2009
+#Sat Mar 07 00:08:29 JST 2009
 eclipse.preferences.version=1
 encoding//.settings/com.piece_framework.piece_ide.flow_designer.diagram/www/webapp/config/flows/Order.flow_diagram=UTF-8
 encoding//www/webapp/config/flows/Order.flow=UTF-8
+encoding//www/webapp/templates/Order/Confirmation.html=UTF-8
+encoding//www/webapp/templates/Order/Finish.html=UTF-8
+encoding//www/webapp/templates/Order/MainMenu.html=UTF-8
+encoding//www/webapp/templates/Order/SideMenu.html=UTF-8
