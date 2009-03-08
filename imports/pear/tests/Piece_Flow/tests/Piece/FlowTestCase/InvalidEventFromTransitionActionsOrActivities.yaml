@@ -1,0 +1,21 @@
+# $Id: InvalidEventFromTransitionActionsOrActivities.yaml 357 2007-10-13 19:02:39Z iteman $
+firstState: DisplayForm
+viewState:
+  - name: DisplayForm
+    view: Form
+    transition:
+      - event: register
+        nextState: ProcessRegister
+        action:
+          class: Piece_FlowInvalidEventFromTransitionActionsOrActivitiesAction
+          method: register
+  - name: DisplayFinish
+    view: Finish
+    activity:
+      class: Piece_FlowInvalidEventFromTransitionActionsOrActivitiesAction
+      method: setupFinish
+actionState:
+  - name: ProcessRegister
+    transition:
+      - event: goDisplayFinish
+        nextState: DisplayFinish

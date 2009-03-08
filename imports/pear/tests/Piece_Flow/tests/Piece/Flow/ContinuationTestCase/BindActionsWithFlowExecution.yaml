@@ -1,0 +1,13 @@
+# $Id: BindActionsWithFlowExecution.yaml 331 2007-08-24 12:56:04Z iteman $
+firstState: DisplayCounter
+lastState: { name: DisplayFinish, view: Finish }
+viewState:
+  - name: DisplayCounter
+    view: Counter
+    activity:
+      method: increase
+    transition:
+      - event: goDisplayFinishFromDisplayCounter
+        nextState: DisplayFinish
+        guard:
+          method: reached

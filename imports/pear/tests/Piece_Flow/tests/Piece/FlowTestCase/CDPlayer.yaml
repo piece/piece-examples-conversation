@@ -1,0 +1,13 @@
+# $Id: CDPlayer.yaml 357 2007-10-13 19:02:39Z iteman $
+firstState: Stop
+viewState:
+  - name: Stop
+    view: Stop
+    activity:
+      class: Piece_FlowCDPlayerAction
+      method: increase
+    transition:
+      - event: play
+        nextState: Playing
+  - name: Playing
+    view: Playing

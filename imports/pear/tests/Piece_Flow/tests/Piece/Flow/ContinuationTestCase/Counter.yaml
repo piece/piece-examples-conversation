@@ -1,0 +1,21 @@
+# $Id: Counter.yaml 331 2007-08-24 12:56:04Z iteman $
+name: Counter
+firstState: DisplayForm
+lastState: { name: Finish, view: Finish }
+viewState:
+  - name: DisplayForm
+    view: Counter
+    entry:
+      class: CounterAction
+      method: setup
+    transition:
+      - event: increase
+        nextState: increased
+        action:
+          class: CounterAction
+          method: increase
+actionState:
+  - name: increased
+    transition:
+      - event: succeed
+        nextState: DisplayForm

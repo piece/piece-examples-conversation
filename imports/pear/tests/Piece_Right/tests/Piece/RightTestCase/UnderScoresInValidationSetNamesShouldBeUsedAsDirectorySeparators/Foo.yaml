@@ -1,0 +1,9 @@
+# $Id: Foo.yaml 401 2007-10-22 12:42:58Z iteman $
+
+- name: firstName
+  description: First Name
+  basedOn: String
+
+- name: lastName
+  description: Last Name
+  basedOn: String

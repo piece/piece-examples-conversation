@@ -1,0 +1,27 @@
+#!/bin/sh
+
+SCRIPT_DIR=$(cd $(dirname $0) && pwd)
+TARGET_DIR=$(cd $(dirname $SCRIPT_DIR) && pwd)
+
+PHP_PEAR_INSTALL_DIR=$TARGET_DIR/imports/pear
+PHP_PEAR_BIN_DIR=$TARGET_DIR/bin
+LPEAR_PHP_INSTALL_DIR=~/apps/php-5.2.8
+
+if [ ! -f $SCRIPT_DIR/pear.ini ]; then
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set bin_dir $TARGET_DIR/bin user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set doc_dir $PHP_PEAR_INSTALL_DIR/docs user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set ext_dir $LPEAR_PHP_INSTALL_DIR/ext user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set php_dir $PHP_PEAR_INSTALL_DIR user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set cache_dir $TARGET_DIR/tmp/pear/cache user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set cfg_dir $PHP_PEAR_INSTALL_DIR/cfg user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set data_dir $PHP_PEAR_INSTALL_DIR/data user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set download_dir $TARGET_DIR/tmp/pear/download user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set php_bin $LPEAR_PHP_INSTALL_DIR/bin/php user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set temp_dir $TARGET_DIR/tmp/pear/temp user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set test_dir $PHP_PEAR_INSTALL_DIR/tests user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini config-set www_dir $TARGET_DIR/www user
+fi
+
+$PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.ini $*
+
+exit $?

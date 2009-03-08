@@ -1,0 +1,11 @@
+# $Id: GeometricTypes.yaml 334 2008-04-04 02:58:49Z iteman $
+
+- name: findByBoxField
+  query: SELECT * FROM $__table WHERE box_field && box $boxField
+
+# Local Variables:
+# mode: conf-colon
+# coding: iso-8859-1
+# tab-width: 2
+# indent-tabs-mode: nil
+# End:
