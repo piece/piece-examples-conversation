@@ -1,0 +1,8 @@
+- name: side
+  required:
+    message: サイドメニューを選択してください
+    validator:
+      - name: List
+        rule:
+          elements: [1, 2, 3]
+        message: 正しいサイドメニューを選択してください

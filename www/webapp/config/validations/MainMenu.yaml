@@ -1,0 +1,8 @@
+- name: main
+  required:
+    message: 注文内容を選択してください
+    validator:
+      - name: List
+        rule:
+          elements: [1, 2, 3]
+        message: 正しい注文内容を選択してください
