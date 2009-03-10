@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 8c6438ec266dddd18bd28509f7eb6c68a99c2dad $
+ * @version    GIT: $Id: 964007b83ac02fdd5f897e2d1e3ff5b27bf76117 $
  * @see        Piece_Unity_Plugin_FactoryTestCase
  * @since      File available since Release 0.11.0
  */
@@ -46,7 +46,7 @@ require_once 'Piece/Unity/Plugin/Common.php';
  * @package    Piece_Unity
  * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @see        Piece_Unity_Plugin_FactoryTestCase
  * @since      Class available since Release 0.11.0
  */

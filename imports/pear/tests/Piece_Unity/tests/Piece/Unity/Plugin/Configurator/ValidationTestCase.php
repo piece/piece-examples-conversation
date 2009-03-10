@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 31b7e660f64e7ca1f98643569fcfda6e6db86438 $
+ * @version    GIT: $Id: 04e09fb8e33aecd5c54f597e605b06be1a4caeb2 $
  * @since      File available since Release 0.11.0
  */
 
@@ -53,7 +53,7 @@ require_once 'Cache/Lite/File.php';
  * @package    Piece_Unity
  * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.11.0
  */
 class Piece_Unity_Plugin_Configurator_ValidationTestCase extends PHPUnit_TestCase

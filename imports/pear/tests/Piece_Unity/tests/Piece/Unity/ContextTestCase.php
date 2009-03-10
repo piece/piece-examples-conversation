@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 3f01fafe7fedcbc7a34336d4ad598deb8552b674 $
+ * @version    GIT: $Id: 5ee4b09d6b4146c68e5721582bb209f23815e7b5 $
  * @since      File available since Release 0.1.0
  */
 
@@ -48,7 +48,7 @@ require_once 'Piece/Unity/HTTPStatus.php';
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.1.0
  */
 class Piece_Unity_ContextTestCase extends PHPUnit_TestCase
@@ -368,6 +368,53 @@ class Piece_Unity_ContextTestCase extends PHPUnit_TestCase
 
         $GLOBALS['PIECE_UNITY_HTTPStatus_SentStatusLine'] = null;
         unset($_SERVER['SERVER_PROTOCOL']);
+    }
+
+    /**
+     * @since Method available since Release 1.7.1
+     */
+    function testShouldRemoveQueryVariablesFromRequestUri()
+    {
+        $previousScriptName = @$_SERVER['REQUEST_URI'];
+        $_SERVER['REQUEST_URI'] = '/foo.php?bar=baz';
+
+        $context = &Piece_Unity_Context::singleton();
+
+        $this->assertEquals('/foo.php', $context->getScriptName());
+
+        $_SERVER['REQUEST_URI'] = $previousScriptName;
+    }
+
+    /**
+     * @since Method available since Release 1.7.1
+     */
+    function testShouldRemovePathInfoFromRequestUri()
+    {
+        $previousScriptName = @$_SERVER['REQUEST_URI'];
+        $_SERVER['REQUEST_URI'] = '/foo.php/bar/baz';
+        $_SERVER['PATH_INFO'] = '/bar/baz';
+
+        $context = &Piece_Unity_Context::singleton();
+
+        $this->assertEquals('/foo.php', $context->getScriptName());
+
+        $_SERVER['REQUEST_URI'] = $previousScriptName;
+    }
+
+    /**
+     * @since Method available since Release 1.7.1
+     */
+    function testShouldRemoveQueryVariablesAndPathInfoFromRequestUri()
+    {
+        $previousScriptName = @$_SERVER['REQUEST_URI'];
+        $_SERVER['REQUEST_URI'] = '/foo.php/bar/baz?bar=baz';
+        $_SERVER['PATH_INFO'] = '/bar/baz';
+
+        $context = &Piece_Unity_Context::singleton();
+
+        $this->assertEquals('/foo.php', $context->getScriptName());
+
+        $_SERVER['REQUEST_URI'] = $previousScriptName;
     }
 
     /**#@-*/

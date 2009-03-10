@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: e657f96e08a4a3daf7509a6c5987cb96126b4b9e $
+ * @version    GIT: $Id: 48eb79b7848dd1a3a5de3457438b0c3b9ef8bc7a $
  * @since      File available since Release 0.1.0
  */
 
@@ -50,7 +50,7 @@ require_once 'Cache/Lite/File.php';
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.1.0
  */
 class Piece_Unity_Plugin_Dispatcher_SimpleTestCase extends PHPUnit_TestCase

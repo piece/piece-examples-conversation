@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id$
+ * @version    GIT: $Id: 007a565a7ba625000a017240e0031c78ed1378a5 $
  * @since      File available since Release 0.9.0
  * @deprecated File deprecated in Release 1.5.0
  */
@@ -54,7 +54,7 @@ $GLOBALS['PIECE_UNITY_URL_NonSSLableServers'] = array();
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.9.0
  * @deprecated Class deprecated in Release 1.5.0
  */

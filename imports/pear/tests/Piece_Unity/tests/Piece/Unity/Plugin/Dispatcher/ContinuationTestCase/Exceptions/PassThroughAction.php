@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 0762385f0f42ae2f3c99ab11712dfe5a14d47003 $
+ * @version    GIT: $Id: 1b64c805a925b29988611bf7f4c7c5bd759c3680 $
  * @see        Piece_Unity_Plugin_Dispatcher_ContinuationTestCase
  * @since      File available since Release 0.1.0
  */
@@ -47,7 +47,7 @@ require_once 'PEAR/ErrorStack.php';
  * @package    Piece_Unity
  * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @see        Piece_Unity_Plugin_Dispatcher_ContinuationTestCase
  * @since      Class available since Release 0.1.0
  */

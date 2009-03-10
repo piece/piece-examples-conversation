@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id$
+ * @version    GIT: $Id: 88f8bb6d472ecc9aba95f584b0b4ef1cd612ce2b $
  * @since      File available since Release 0.5.0
  */
 
@@ -46,7 +46,7 @@ require_once 'Piece/Unity/Error.php';
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.5.0
  */
 class Piece_Unity_Plugin_Interceptor_Session extends Piece_Unity_Plugin_Common

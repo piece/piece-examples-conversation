@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 4efaa0629c4015fdef64020529ac58c7d565b6dc $
+ * @version    GIT: $Id: 042661c20874bd119809f4df6fd985fd86f86119 $
  * @since      File available since Release 0.11.0
  */
 
@@ -52,7 +52,7 @@ require_once 'Piece/Unity/Env.php';
  * @package    Piece_Unity
  * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.11.0
  */
 class Piece_Unity_Plugin_ConfiguratorChainTestCase extends PHPUnit_TestCase

@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id$
+ * @version    GIT: $Id: 7a07e0580b4341f7708877d9c174a74a038fb2a1 $
  * @since      File available since Release 0.2.0
  */
 
@@ -51,7 +51,7 @@ $GLOBALS['PIECE_UNITY_Session_Autoload_Classes'] = array();
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.2.0
  */
 class Piece_Unity_Session

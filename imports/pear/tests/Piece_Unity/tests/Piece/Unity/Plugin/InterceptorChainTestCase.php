@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: d7e7b4f3f87333619f8b4b5745455bcc7c9382a1 $
+ * @version    GIT: $Id: d6d19ff7bafb779db32e4f271fa15cc0c25cc3b4 $
  * @since      File available since Release 0.4.0
  */
 
@@ -51,7 +51,7 @@ require_once 'Piece/Unity/Config.php';
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.4.0
  */
 class Piece_Unity_Plugin_InterceptorChainTestCase extends PHPUnit_TestCase

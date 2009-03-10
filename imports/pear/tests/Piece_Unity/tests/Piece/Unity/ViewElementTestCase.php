@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: b0d0e702df30ff2bc3d772419af2ffbb5847380c $
+ * @version    GIT: $Id: a364c4f7dc0308b0d778b5999ae723d074b8d5eb $
  * @since      File available since Release 0.1.0
  */
 
@@ -47,7 +47,7 @@ require_once 'Piece/Unity/ViewElement.php';
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.1.0
  */
 class Piece_Unity_ViewElementTestCase extends PHPUnit_TestCase

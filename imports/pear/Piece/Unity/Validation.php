@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id$
+ * @version    GIT: $Id: 3e3d29158dd346bd3f634dd8a89a2dff23951ce3 $
  * @see        Piece_Right, Piece_Right_Config, Piece_Right_Results
  * @since      File available since Release 0.7.0
  */
@@ -53,7 +53,7 @@ require_once 'Piece/Right/Config/Factory.php';
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @see        Piece_Right, Piece_Right_Config, Piece_Right_Results
  * @since      Class available since Release 0.7.0
  */

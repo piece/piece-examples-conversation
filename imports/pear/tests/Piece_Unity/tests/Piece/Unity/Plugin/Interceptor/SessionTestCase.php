@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: a5a3315e96363866a6f0e925bb638f25ef6a72d6 $
+ * @version    GIT: $Id: 0d8978ad49574991466a73135b1006cbc296a1a1 $
  * @since      File available since Release 1.6.0
  */
 
@@ -49,7 +49,7 @@ require_once 'Piece/Unity/Context.php';
  * @package    Piece_Unity
  * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 1.6.0
  */
 class Piece_Unity_Plugin_Interceptor_SessionTestCase extends PHPUnit_TestCase

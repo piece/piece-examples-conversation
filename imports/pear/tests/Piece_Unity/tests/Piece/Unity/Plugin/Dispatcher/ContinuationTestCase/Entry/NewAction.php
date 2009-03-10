@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: dc2d1c88149c72a56e7af86a9ac940e3472dfa83 $
+ * @version    GIT: $Id: 8c9595e23ed7c703ad2b3c0d3bbe236c85afa8a8 $
  * @see        Piece_Unity_Plugin_Dispatcher_ContinuationTestCase
  * @since      File available since Release 1.3.0
  */
@@ -47,7 +47,7 @@ require_once 'Piece/Unity/Service/Continuation.php';
  * @package    Piece_Unity
  * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @see        Piece_Unity_Plugin_Dispatcher_ContinuationTestCase
  * @since      Class available since Release 1.3.0
  */
