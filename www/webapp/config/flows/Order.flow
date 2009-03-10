@@ -5,16 +5,32 @@ viewState:
     view: MainMenu
     transition:
       - event: selectMainMenu
-        nextState: SideMenu
+        nextState: ValidateMainMenu
   - name: SideMenu
     view: SideMenu
     transition:
       - event: selectSideMenu
-        nextState: Confirmation
+        nextState: ValidateSideMenu
   - name: Confirmation
     view: Confirmation
     transition:
       - event: finish
         nextState: Finish
+      - event: reedit
+        nextState: MainMenu
   - name: Finish
     view: Finish
+
+actionState:
+  - name: ValidateMainMenu
+    transition:
+      - event: valid
+        nextState: SideMenu
+      - event: invalid
+        nextState: MainMenu
+  - name: ValidateSideMenu
+    transition:
+      - event: valid
+        nextState: Confirmation
+      - event: invalid
+        nextState: SideMenu
