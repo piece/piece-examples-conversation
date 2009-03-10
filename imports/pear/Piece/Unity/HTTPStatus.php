@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id$
+ * @version    GIT: $Id: d52f76812bd1ff0af2adf4b632862d9dc8893492 $
  * @link       http://www.studyinghttp.net/cgi-bin/rfc.cgi?2616#Sec6.1.1
  * @since      File available since Release 1.5.0
  */
@@ -52,7 +52,7 @@ $GLOBALS['PIECE_UNITY_HTTPStatus_SentStatusLine'] = null;
  * @package    Piece_Unity
  * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @link       http://www.studyinghttp.net/cgi-bin/rfc.cgi?2616#Sec6.1.1
  * @since      Class available since Release 1.5.0
  */

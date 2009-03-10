@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id$
+ * @version    GIT: $Id: 3771a1c73a19e265f7086954f85110f4e34b6a0e $
  * @since      File available since Release 1.1.0
  */
 
@@ -48,7 +48,7 @@ $GLOBALS['PIECE_UNITY_Env_IsProduction'] = true;
  * @package    Piece_Unity
  * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 1.1.0
  */
 class Piece_Unity_Env

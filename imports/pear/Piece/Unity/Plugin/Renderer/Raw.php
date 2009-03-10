@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id$
+ * @version    GIT: $Id: e0dee6b69165eea9c293fe155254520d3fea21d4 $
  * @since      File available since Release 1.5.0
  */
 
@@ -45,7 +45,7 @@ require_once 'Piece/Unity/Plugin/Common.php';
  * @package    Piece_Unity
  * @copyright  2008-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 1.5.0
  */
 class Piece_Unity_Plugin_Renderer_Raw extends Piece_Unity_Plugin_Common {}

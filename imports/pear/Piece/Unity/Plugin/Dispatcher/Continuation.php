@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id$
+ * @version    GIT: $Id: 1faf291e4c3a61ca4bee63bf21b96d40c7f1ce6a $
  * @see        Piece_Flow_Continuation_Server, Piece_Flow
  * @since      File available since Release 0.1.0
  */
@@ -66,7 +66,7 @@ $GLOBALS['PIECE_UNITY_Continuation_FlowID'] = null;
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @see        Piece_Flow_Continuation_Server, Piece_Flow
  * @since      Class available since Release 0.1.0
  */
@@ -369,7 +369,8 @@ class Piece_Unity_Plugin_Dispatcher_Continuation extends Piece_Unity_Plugin_Comm
             $this->_getConfiguration('flowNameKey');
 
         if ($this->_getConfiguration('useFlowMappings')) {
-            $GLOBALS['PIECE_UNITY_Continuation_FlowID'] = $_SERVER['REQUEST_URI'];
+            $GLOBALS['PIECE_UNITY_Continuation_FlowID'] =
+                $this->_context->getOriginalScriptName();
         } else {
             $GLOBALS['PIECE_UNITY_Continuation_FlowID'] =
                 $this->_getConfiguration('flowName');

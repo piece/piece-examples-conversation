@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 6ece2771c6bcf8a1bb6d4f7bf55d6aa8123c2f7c $
+ * @version    GIT: $Id: 724d488b1dc2f809837861b5a31f6f2f9f8d1101 $
  * @see        Piece_Unity_Plugin_Renderer_PHPTestCase
  * @since      File available since Release 0.1.0
  */
@@ -44,7 +44,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @see        Piece_Unity_Plugin_Renderer_PHPTestCase
  * @since      Class available since Release 0.1.0
  */

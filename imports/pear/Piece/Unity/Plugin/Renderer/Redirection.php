@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 2fec90eb651efd2c2f90110c3bdec39652200e40 $
+ * @version    GIT: $Id: a914843d8360400ef4ed9b0d8be41f313939e5e5 $
  * @since      File available since Release 0.6.0
  */
 
@@ -46,7 +46,7 @@ require_once 'Piece/Unity/URI.php';
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.6.0
  */
 class Piece_Unity_Plugin_Renderer_Redirection extends Piece_Unity_Plugin_Common

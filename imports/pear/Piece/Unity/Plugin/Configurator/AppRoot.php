@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id$
+ * @version    GIT: $Id: 43b11a512b833a9ecda4fce8ceeffe65421e7a4b $
  * @since      File available since Release 0.12.0
  */
 
@@ -47,7 +47,7 @@ require_once 'Piece/Unity/Error.php';
  * @package    Piece_Unity
  * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.12.0
  */
 class Piece_Unity_Plugin_Configurator_AppRoot extends Piece_Unity_Plugin_Common

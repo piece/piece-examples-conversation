@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 0cdca224edb7904d4b43996d751228cd232c1eca $
+ * @version    GIT: $Id: fe14cadd10d6d0d87832a358eeb0d6badf776ad7 $
  * @since      File available since Release 0.2.0
  */
 
@@ -49,7 +49,7 @@ require_once dirname(__FILE__) . '/SessionTestCase/Loader.php';
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.2.0
  */
 class Piece_Unity_SessionTestCase extends PHPUnit_TestCase

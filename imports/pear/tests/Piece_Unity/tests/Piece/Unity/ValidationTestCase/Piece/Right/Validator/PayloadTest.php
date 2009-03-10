@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: be810277cc1e137557c3fcbbf25407c511f96299 $
+ * @version    GIT: $Id: c6afff97ed0b94ccf45890469c37fbb3f05bc741 $
  * @see        Piece_Unity_ValidationTestCase
  * @see        Piece_Right_Validator_Common
  * @since      File available since Release 0.9.0
@@ -47,7 +47,7 @@ require_once 'Piece/Right/Validator/Common.php';
  * @package    Piece_Unity
  * @copyright  2006-2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @see        Piece_Unity_ValidationTestCase
  * @see        Piece_Right_Validator_Common
  * @since      Class available since Release 0.9.0

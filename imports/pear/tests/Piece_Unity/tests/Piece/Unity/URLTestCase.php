@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 6a8b57403adc3ba5040a3912961be95b55986456 $
+ * @version    GIT: $Id: b727be25508d9101df53d3e8c9e128ea1b47625a $
  * @since      File available since Release 0.9.0
  */
 
@@ -49,7 +49,7 @@ require_once 'Piece/Unity/Error.php';
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.9.0
  */
 class Piece_Unity_URLTestCase extends PHPUnit_TestCase

@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id$
+ * @version    GIT: $Id: 392e3d8d51931c086c9bc8cff4644ab3d590c5a5 $
  * @since      File available since Release 0.1.0
  */
 
@@ -55,7 +55,7 @@ $GLOBALS['PIECE_UNITY_Context_Instance'] = null;
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.1.0
  */
 class Piece_Unity_Context
@@ -82,6 +82,7 @@ class Piece_Unity_Context
     var $_eventNameImported = false;
     var $_eventNameKey = '_event';
     var $_scriptName;
+    var $_originalScriptName;
     var $_basePath = '';
     var $_attributes = array();
     var $_proxyPath;
@@ -301,6 +302,20 @@ class Piece_Unity_Context
     function getScriptName()
     {
         return $this->_scriptName;
+    }
+
+    // }}}
+    // {{{ getOriginalScriptName()
+
+    /**
+     * Gets the original script name of the current request.
+     *
+     * @return string
+     * @since Method available since Release 1.7.1
+     */
+    function getOriginalScriptName()
+    {
+        return $this->_originalScriptName;
     }
 
     // }}}
@@ -652,13 +667,8 @@ class Piece_Unity_Context
         $this->_request = &new Piece_Unity_Request();
         $this->_viewElement = &new Piece_Unity_ViewElement();
         $this->_session = &new Piece_Unity_Session();
-        $this->_scriptName = str_replace('//', '/', @$_SERVER['REQUEST_URI']);
-
-        $positionOfSlash = strrpos($this->_scriptName, '/');
-        if ($positionOfSlash) {
-            $this->_basePath = substr($this->_scriptName, 0, $positionOfSlash);
-        }
-
+        $this->_scriptName = $this->_originalScriptName = $this->_getScriptName();
+        $this->_basePath = $this->_getBasePath();
         $this->_validation = &new Piece_Unity_Validation();
     }
 
@@ -718,6 +728,58 @@ class Piece_Unity_Context
     {
         $eventName = $this->_request->hasParameter($this->_eventNameKey) ? $this->_request->getParameter($this->_eventNameKey) : null;
         $this->setEventName($eventName);
+    }
+
+    // }}}
+    // {{{ _getScriptName()
+
+    /**
+     * Gets the script name from the REQUEST_URI variable.
+     *
+     * @return string
+     * @since Method available since Release 1.7.1
+     */
+    function _getScriptName()
+    {
+        $requestURI = str_replace('//', '/', @$_SERVER['REQUEST_URI']);
+
+        $positionOfQuestion = strpos($requestURI, '?');
+        if ($positionOfQuestion) {
+            $scriptName = substr($requestURI, 0, $positionOfQuestion);
+        } else {
+            $scriptName = $requestURI;
+        }
+
+        $pathInfo = Piece_Unity_Request::getPathInfo();
+        if (is_null($pathInfo)) {
+            return $scriptName;
+        }
+
+        $positionOfPathInfo = strrpos($scriptName, $pathInfo);
+        if ($positionOfPathInfo) {
+            return substr($scriptName, 0, $positionOfPathInfo);
+        }
+
+        return $scriptName;
+    }
+
+    // }}}
+    // {{{ _getBasePath()
+
+    /**
+     * Gets the base path from the script name.
+     *
+     * @return string
+     * @since Method available since Release 1.7.1
+     */
+    function _getBasePath()
+    {
+        $positionOfSlash = strrpos($this->_scriptName, '/');
+        if (!$positionOfSlash) {
+            return $this->_scriptName;
+        }
+
+        return substr($this->_scriptName, 0, $positionOfSlash);
     }
 
     /**#@-*/

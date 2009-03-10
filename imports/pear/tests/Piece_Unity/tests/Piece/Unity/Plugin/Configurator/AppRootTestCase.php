@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 486a820f3bd92706cc6174c89eb879680a3d2e8d $
+ * @version    GIT: $Id: ed7859a0fa85a2de105ac195d4b7c9ac4c824b39 $
  * @since      File available since Release 0.12.0
  */
 
@@ -50,7 +50,7 @@ require_once 'Piece/Unity/Context.php';
  * @package    Piece_Unity
  * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.12.0
  */
 class Piece_Unity_Plugin_Configurator_AppRootTestCase extends PHPUnit_TestCase

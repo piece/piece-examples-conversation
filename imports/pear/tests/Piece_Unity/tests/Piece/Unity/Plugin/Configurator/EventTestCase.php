@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 21cbad7c09b7fc328a1986b6762bd822beafee26 $
+ * @version    GIT: $Id: ae3d74491a401980374911b2d07f1c02a9ea0138 $
  * @since      File available since Release 0.11.0
  */
 
@@ -49,7 +49,7 @@ require_once 'Piece/Unity/Config.php';
  * @package    Piece_Unity
  * @copyright  2007, 2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.11.0
  */
 class Piece_Unity_Plugin_Configurator_EventTestCase extends PHPUnit_TestCase

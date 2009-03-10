@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: 202a81287d7c580c0f9611825da061926732b99c $
+ * @version    GIT: $Id: e5f3b8c54b5e3f48d6743643e5744270a006c1c3 $
  * @since      File available since Release 0.11.0
  */
 
@@ -51,7 +51,7 @@ require_once 'Piece/Unity/Plugin/View.php';
  * @package    Piece_Unity
  * @copyright  2007-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.11.0
  */
 class Piece_Unity_Plugin_ViewTestCase extends PHPUnit_TestCase

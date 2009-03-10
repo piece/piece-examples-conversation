@@ -31,7 +31,7 @@
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    GIT: $Id: f8a5cbef61223a598b7d6ed299118c5ea9880e32 $
+ * @version    GIT: $Id: 25236dcec8d28e1978c80eeb8bcb5011af79e869 $
  * @since      File available since Release 0.1.0
  */
 
@@ -54,7 +54,7 @@ $GLOBALS['PIECE_UNITY_Config_FactoryTestCase_hasWarnings'] = false;
  * @package    Piece_Unity
  * @copyright  2006-2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.7.0
+ * @version    Release: 1.7.1
  * @since      Class available since Release 0.1.0
  */
 class Piece_Unity_Config_FactoryTestCase extends PHPUnit_TestCase
