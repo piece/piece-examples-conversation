@@ -13,10 +13,12 @@ viewState:
         nextState: ValidateSideMenu
   - name: Confirmation
     view: Confirmation
+    activity:
+      method: onConfirmation
     transition:
       - event: finish
         nextState: Finish
-      - event: reedit
+      - event: reselect
         nextState: MainMenu
   - name: Finish
     view: Finish
