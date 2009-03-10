@@ -23,12 +23,16 @@ viewState:
 
 actionState:
   - name: ValidateMainMenu
+    activity:
+      method: onValidateMainMenu
     transition:
       - event: valid
         nextState: SideMenu
       - event: invalid
         nextState: MainMenu
   - name: ValidateSideMenu
+    activity:
+      method: onValidateSideMenu
     transition:
       - event: valid
         nextState: Confirmation

@@ -34,7 +34,7 @@
  * @since      File available since Release 1.0.0
  */
 
-require_once 'Piece/Unity/Service/FlexyElement.php';
+require_once 'Piece/Unity/Service/FlowAction.php';
 
 // {{{ RegistrationAction
 
@@ -49,6 +49,25 @@ require_once 'Piece/Unity/Service/FlexyElement.php';
  */
 class OrderAction extends Piece_Unity_Service_FlowAction
 {
+    function onValidateMainMenu()
+    {
+        $validation = &$this->_context->getValidation();
+        if (!$validation->validate('MainMenu', $this->_order)) {
+            return 'invalid';
+        }
+
+        return 'valid';
+    }
+
+    function onValidateSideMenu()
+    {
+        $validation = &$this->_context->getValidation();
+        if (!$validation->validate('SideMenu', $this->_order)) {
+            return 'invalid';
+        }
+
+        return 'valid';
+    }
 }
 
 // }}}

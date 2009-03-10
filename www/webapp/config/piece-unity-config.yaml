@@ -115,9 +115,6 @@
     - name: useUnderscoreAsDirectorySeparator
       type: configuration
       value: true
-    - name: template
-      type: configuration
-      value: Common
 
 - name: Configurator_Proxy
   point:
