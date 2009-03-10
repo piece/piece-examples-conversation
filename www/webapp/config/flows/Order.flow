@@ -5,12 +5,12 @@ viewState:
     view: MainMenu
     transition:
       - event: selectMainMenu
-        nextState: ValidateMainMenu
+        nextState: ValidationMainMenu
   - name: SideMenu
     view: SideMenu
     transition:
       - event: selectSideMenu
-        nextState: ValidateSideMenu
+        nextState: ValidationSideMenu
   - name: Confirmation
     view: Confirmation
     activity:
@@ -24,17 +24,17 @@ viewState:
     view: Finish
 
 actionState:
-  - name: ValidateMainMenu
+  - name: ValidationMainMenu
     activity:
-      method: onValidateMainMenu
+      method: onValidationMainMenu
     transition:
       - event: valid
         nextState: SideMenu
       - event: invalid
         nextState: MainMenu
-  - name: ValidateSideMenu
+  - name: ValidationSideMenu
     activity:
-      method: onValidateSideMenu
+      method: onValidationSideMenu
     transition:
       - event: valid
         nextState: Confirmation

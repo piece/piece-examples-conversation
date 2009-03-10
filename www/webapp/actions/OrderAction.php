@@ -51,7 +51,7 @@ class OrderAction extends Piece_Unity_Service_FlowAction
 {
     var $_order;
 
-    function onValidateMainMenu()
+    function onValidationMainMenu()
     {
         $validation = &$this->_context->getValidation();
         if (!$validation->validate('MainMenu', $this->_order)) {
@@ -61,7 +61,7 @@ class OrderAction extends Piece_Unity_Service_FlowAction
         return 'valid';
     }
 
-    function onValidateSideMenu()
+    function onValidationSideMenu()
     {
         $validation = &$this->_context->getValidation();
         if (!$validation->validate('SideMenu', $this->_order)) {
@@ -70,7 +70,7 @@ class OrderAction extends Piece_Unity_Service_FlowAction
 
         return 'valid';
     }
-    
+
     function onConfirmation()
     {
         $mainMenu = array('1' => 'ジャーマンポテトバーガー',
