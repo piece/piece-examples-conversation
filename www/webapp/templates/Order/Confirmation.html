@@ -1,8 +1,9 @@
 <h3>注文内容は以上で宜しいですか？</h3>
 <ul>
-  <li>メインメニュー：+++</li>
-  <li>サイドメニュー：---</li>
+  <li>メインメニュー：{main}</li>
+  <li>サイドメニュー：{side}</li>
 </ul>
-<div>小計： ***円</div>
+<div>小計： {price}円</div>
 
-<a href="order.php?{__eventNameKey}_accept&{__flowExecutionTicketKey}={__flowExecutionTicket}">OK</a>
+<a href="order.php?{__eventNameKey}_finish&{__flowExecutionTicketKey}={__flowExecutionTicket}">OK</a>
+<a href="order.php?{__eventNameKey}_reselect&{__flowExecutionTicketKey}={__flowExecutionTicket}">選びなおす</a>

@@ -135,11 +135,11 @@
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_yd1CgA1xEd6P7bBeb4d-uw" type="4004" source="__3mdEgpdEd6eNKxIpWbjOw" target="__3kn4ApdEd6eNKxIpWbjOw">
     <children xmi:type="notation:Node" xmi:id="_yd2QoA1xEd6P7bBeb4d-uw" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_yd2QoQ1xEd6P7bBeb4d-uw" y="-30"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yd2QoQ1xEd6P7bBeb4d-uw" y="-38"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_yd1CgQ1xEd6P7bBeb4d-uw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_yd1Cgg1xEd6P7bBeb4d-uw" fontName="IPA Pゴシック"/>
-    <element xmi:type="FlowDesigner:Event" href="../../../../../../www/webapp/config/flows/Order.flow#//@states[name='Confirmation']/@events[event='reedit']"/>
+    <element xmi:type="FlowDesigner:Event" href="../../../../../../www/webapp/config/flows/Order.flow#//@states[name='Confirmation']/@events[event='reselect']"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yd1Cgw1xEd6P7bBeb4d-uw" points="[-108, -5, -108, 175]$[-123, -6, -123, 174]$[-123, -180, -123, 0]$[-96, -180, -96, 0]"/>
   </edges>
 </notation:Diagram>

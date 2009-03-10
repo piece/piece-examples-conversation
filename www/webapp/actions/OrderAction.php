@@ -49,6 +49,8 @@ require_once 'Piece/Unity/Service/FlowAction.php';
  */
 class OrderAction extends Piece_Unity_Service_FlowAction
 {
+    var $_order;
+
     function onValidateMainMenu()
     {
         $validation = &$this->_context->getValidation();
@@ -67,6 +69,27 @@ class OrderAction extends Piece_Unity_Service_FlowAction
         }
 
         return 'valid';
+    }
+    
+    function onConfirmation()
+    {
+        $mainMenu = array('1' => 'ジャーマンポテトバーガー',
+                          '2' => 'ポテトコロッケバーガー',
+                          '3' => '肉じゃがバーガー'
+                          );
+        $sideMenu = array('1' => 'フライドポテト',
+                          '2' => 'ポテトサラダ',
+                          '3' => 'スイートポテト'
+                          );
+        $prices = array('1' => 650,
+                        '2' => 600,
+                        '3' => 700
+                        );
+
+        $viewElement = &$this->_context->getViewElement();
+        $viewElement->setElement('main',  $mainMenu[$this->_order->main]);
+        $viewElement->setElement('side',  $sideMenu[$this->_order->side]);
+        $viewElement->setElement('price', $prices[$this->_order->main]);
     }
 }
 
