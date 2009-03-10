@@ -16,8 +16,8 @@ viewState:
     activity:
       method: onConfirmation
     transition:
-      - event: finish
-        nextState: Finish
+      - event: register
+        nextState: Registration
       - event: reselect
         nextState: MainMenu
   - name: Finish
@@ -40,3 +40,9 @@ actionState:
         nextState: Confirmation
       - event: invalid
         nextState: SideMenu
+  - name: Registration
+    activity:
+      method: onRegistration
+    transition:
+      - event: finish
+        nextState: Finish

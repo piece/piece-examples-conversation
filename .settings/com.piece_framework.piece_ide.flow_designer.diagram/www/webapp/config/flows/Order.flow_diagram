@@ -43,7 +43,13 @@
     <children xmi:type="notation:Node" xmi:id="_qFWUoA1xEd6P7bBeb4d-uw" type="5006"/>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_qFVtkQ1xEd6P7bBeb4d-uw" fontName="IPA Pゴシック"/>
     <element xmi:type="FlowDesigner:ActionState" href="../../../../../../www/webapp/config/flows/Order.flow#//@states[name='ValidationSideMenu']"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qFVtkg1xEd6P7bBeb4d-uw" x="440" y="225"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qFVtkg1xEd6P7bBeb4d-uw" x="442" y="225"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_cmRikA2AEd6QYvoCoNjL8Q" type="2009">
+    <children xmi:type="notation:Node" xmi:id="_cmUl4A2AEd6QYvoCoNjL8Q" type="5006"/>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_cmRikQ2AEd6QYvoCoNjL8Q" fontName="IPA Pゴシック"/>
+    <element xmi:type="FlowDesigner:ActionState" href="../../../../../../www/webapp/config/flows/Order.flow#//@states[name='Registration']"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cmRikg2AEd6QYvoCoNjL8Q" x="464" y="320"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="__05HUQpdEd6eNKxIpWbjOw"/>
   <element xmi:type="FlowDesigner:Flow" href="../../../../../../www/webapp/config/flows/Order.flow#/"/>
@@ -67,16 +73,15 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__4Lr4wpdEd6eNKxIpWbjOw" points="[1, 0, 0, 60]$[1, -60, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__6_IQQpdEd6eNKxIpWbjOw" id="(0.4972973,0.0)"/>
   </edges>
-  <edges xmi:type="notation:Edge" xmi:id="__4OIIApdEd6eNKxIpWbjOw" type="4004" source="__3mdEgpdEd6eNKxIpWbjOw" target="__3nrMApdEd6eNKxIpWbjOw">
+  <edges xmi:type="notation:Edge" xmi:id="__4OIIApdEd6eNKxIpWbjOw" type="4004" source="__3mdEgpdEd6eNKxIpWbjOw" target="_cmRikA2AEd6QYvoCoNjL8Q">
     <children xmi:type="notation:Node" xmi:id="__4OvMApdEd6eNKxIpWbjOw" type="6003">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="__4OvMQpdEd6eNKxIpWbjOw" y="40"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="__4OvMQpdEd6eNKxIpWbjOw" x="-10" y="15"/>
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="__4OIIQpdEd6eNKxIpWbjOw"/>
     <styles xmi:type="notation:FontStyle" xmi:id="__4OIIgpdEd6eNKxIpWbjOw" fontName="IPA Pゴシック"/>
-    <element xmi:type="FlowDesigner:Event" href="../../../../../../www/webapp/config/flows/Order.flow#//@states[name='Confirmation']/@events[event='finish']"/>
+    <element xmi:type="FlowDesigner:Event" href="../../../../../../www/webapp/config/flows/Order.flow#//@states[name='Confirmation']/@events[event='register']"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__4OIIwpdEd6eNKxIpWbjOw" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__696IApdEd6eNKxIpWbjOw" id="(0.49769586,0.0)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__696IQpdEd6eNKxIpWbjOw" id="(0.4964029,1.0)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="__4QkYApdEd6eNKxIpWbjOw" type="4004" source="__3oSQQpdEd6eNKxIpWbjOw" target="__3kn4ApdEd6eNKxIpWbjOw">
     <children xmi:type="notation:Node" xmi:id="__4QkZApdEd6eNKxIpWbjOw" type="6003">
@@ -141,5 +146,15 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_yd1Cgg1xEd6P7bBeb4d-uw" fontName="IPA Pゴシック"/>
     <element xmi:type="FlowDesigner:Event" href="../../../../../../www/webapp/config/flows/Order.flow#//@states[name='Confirmation']/@events[event='reselect']"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yd1Cgw1xEd6P7bBeb4d-uw" points="[-108, -5, -108, 175]$[-123, -6, -123, 174]$[-123, -180, -123, 0]$[-96, -180, -96, 0]"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_gR5fwA2AEd6QYvoCoNjL8Q" type="4004" source="_cmRikA2AEd6QYvoCoNjL8Q" target="__3nrMApdEd6eNKxIpWbjOw">
+    <children xmi:type="notation:Node" xmi:id="_gR7U8A2AEd6QYvoCoNjL8Q" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_gR7U8Q2AEd6QYvoCoNjL8Q" x="-9" y="-18"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_gR5fwQ2AEd6QYvoCoNjL8Q"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_gR5fwg2AEd6QYvoCoNjL8Q" fontName="IPA Pゴシック"/>
+    <element xmi:type="FlowDesigner:Event" href="../../../../../../www/webapp/config/flows/Order.flow#//@states[name='Registration']/@events[event='finish']"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_gR5fww2AEd6QYvoCoNjL8Q" points="[-22, 4, 202, -23]$[-154, 28, 70, 1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gR_mYA2AEd6QYvoCoNjL8Q" id="(0.24719101,0.6976744)"/>
   </edges>
 </notation:Diagram>
