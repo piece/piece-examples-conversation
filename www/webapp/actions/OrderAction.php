@@ -35,6 +35,7 @@
  */
 
 require_once 'Piece/Unity/Service/FlowAction.php';
+require_once 'Piece/ORM.php';
 
 // {{{ RegistrationAction
 
@@ -90,6 +91,14 @@ class OrderAction extends Piece_Unity_Service_FlowAction
         $viewElement->setElement('main',  $mainMenu[$this->_order->main]);
         $viewElement->setElement('side',  $sideMenu[$this->_order->side]);
         $viewElement->setElement('price', $prices[$this->_order->main]);
+    }
+
+    function onRegistration()
+    {
+        $mapper = Piece_ORM::getMapper('Orders');
+        $mapper->insert($this->_order);
+
+        return 'finish';
     }
 }
 

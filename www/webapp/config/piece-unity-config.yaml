@@ -122,6 +122,25 @@
       type: configuration
       value: /basics
 
+- name: ConfiguratorChain
+  point:
+    - name: configurators
+      type: extension
+      value:
+        - Configurator_PieceORM
+
+- name: Configurator_PieceORM
+  point:
+    - name: configDirectory
+      type: configuration
+      value: ../webapp/config/orm
+    - name: cacheDirectory
+      type: configuration
+      value: ../webapp/cache/orm
+    - name: mapperConfigDirectory
+      type: configuration
+      value: ../webapp/config/orm/mappers
+
 # Local Variables:
 # mode: conf-colon
 # coding: iso-8859-1
