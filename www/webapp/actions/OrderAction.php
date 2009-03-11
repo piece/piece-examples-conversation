@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2007 Piece Project, All rights reserved.
+ * Copyright (c) 2009 Piece Project, All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -27,8 +27,8 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    Piece_Unity
- * @copyright  Piece Project
+ * @package    Piece_Examples_CRUD
+ * @copyright  2009 Piece Project
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
  * @version    SVN: $Id$
  * @since      File available since Release 1.0.0
@@ -37,20 +37,38 @@
 require_once 'Piece/Unity/Service/FlowAction.php';
 require_once 'Piece/ORM.php';
 
-// {{{ RegistrationAction
+// {{{ OrderAction
 
 /**
- * Action class for the flow Registration.
+ * Action class for the flow Order.
  *
- * @package    Piece_Unity
- * @copyright  Piece Project
+ * @package    Piece_Examples_CRUD
+ * @copyright  2009 Piece Project
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.1.0
+ * @version    Release: 1.0.0
  * @since      Class available since Release 1.0.0
  */
 class OrderAction extends Piece_Unity_Service_FlowAction
 {
+    // {{{ properties
+
+    /**#@+
+     * @access public
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
     var $_order;
+
+    /**#@-*/
+
+    /**#@+
+     * @access public
+     */
 
     function onValidationMainMenu()
     {
@@ -100,9 +118,18 @@ class OrderAction extends Piece_Unity_Service_FlowAction
 
         return 'finish';
     }
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    /**#@-*/
+
+    // }}}
 }
 
-// }}}
 // }}}
 
 /*
