@@ -4,7 +4,7 @@
 /**
  * PHP versions 4 and 5
  *
- * Copyright (c) 2007 Piece Project, All rights reserved.
+ * Copyright (c) 2009 Piece Project, All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -27,12 +27,14 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    Piece_Unity
- * @copyright  Piece Project
+ * @package    Piece_Examples_CRUD
+ * @copyright  2009 Piece Project
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id: authenticate.php 464 2007-11-27 05:58:33Z matsufuji $
+ * @version    SVN: $Id$
  * @since      File available since Release 1.0.0
  */
+
+error_reporting(E_ALL);
 
 if (file_exists(dirname(__FILE__) . '/../../imports')) {
     set_include_path(dirname(__FILE__) . '/../../imports/pear' . PATH_SEPARATOR .
@@ -43,22 +45,15 @@ if (file_exists(dirname(__FILE__) . '/../../imports')) {
 require_once 'Piece/Unity.php';
 require_once 'Piece/Unity/Error.php';
 
-// デバッグ用
-error_reporting(E_ALL);
-Piece_Unity_Error::pushCallback(
-    create_function('$error', 'var_dump($error);
-    return ' . PEAR_ERRORSTACK_DIE . ';'));
+Piece_Unity_Error::pushCallback(create_function('$error', 'var_dump($error); return ' . PEAR_ERRORSTACK_DIE . ';'));
 
-// セッション設定
 $base = dirname(__FILE__) . '/../webapp';
-ini_set('session.cookie_path',
-        str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])));
+
+ini_set('session.cookie_path', str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])));
 session_save_path("$base/sessions");
 
-// Piece_Unityの開始
 $unity = &new Piece_Unity("$base/config", "$base/cache");
-$unity->setConfiguration('Configurator_AppRoot',
-                         'appRoot', dirname(__FILE__));
+$unity->setConfiguration('Configurator_AppRoot', 'appRoot', dirname(__FILE__));
 $unity->dispatch();
 
 /*
