@@ -102,17 +102,20 @@ class OrderAction extends Piece_Unity_Service_FlowAction
     public function onConfirmation()
     {
         $viewElement = $this->_context->getViewElement();
-        $viewElement->setElement('main',  self::$_mainMenu[$this->_order->main]);
-        $viewElement->setElement('side',  self::$_sideMenu[$this->_order->side]);
+        $viewElement->setElement('main', self::$_mainMenu[$this->_order->main]);
+        $viewElement->setElement('side', self::$_sideMenu[$this->_order->side]);
         $viewElement->setElement('price', self::$_prices[$this->_order->main]);
     }
 
     public function onRegistration()
     {
-        $mapper = Piece_ORM::getMapper('Orders');
-        $mapper->insert($this->_order);
+        try {
+            Piece_ORM::getMapper('Orders')->insert($this->_order);
+        } catch (Stagehand_LegacyError_PEARErrorStack_Exception $e) {
+            return 'fail';
+        }
 
-        return 'finish';
+        return 'done';
     }
 
     /**#@-*/
