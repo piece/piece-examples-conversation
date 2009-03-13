@@ -34,9 +34,6 @@
  * @since      File available since Release 1.0.0
  */
 
-require_once 'Piece/Unity/Service/FlowAction.php';
-require_once 'Piece/ORM.php';
-
 // {{{ OrderAction
 
 /**
@@ -62,7 +59,7 @@ class OrderAction extends Piece_Unity_Service_FlowAction
      * @access private
      */
 
-    var $_order;
+    private $_order;
 
     /**#@-*/
 
@@ -70,9 +67,9 @@ class OrderAction extends Piece_Unity_Service_FlowAction
      * @access public
      */
 
-    function onValidationMainMenu()
+    public function onValidationMainMenu()
     {
-        $validation = &$this->_context->getValidation();
+        $validation = $this->_context->getValidation();
         if (!$validation->validate('MainMenu', $this->_order)) {
             return 'invalid';
         }
@@ -80,9 +77,9 @@ class OrderAction extends Piece_Unity_Service_FlowAction
         return 'valid';
     }
 
-    function onValidationSideMenu()
+    public function onValidationSideMenu()
     {
-        $validation = &$this->_context->getValidation();
+        $validation = $this->_context->getValidation();
         if (!$validation->validate('SideMenu', $this->_order)) {
             return 'invalid';
         }
@@ -90,7 +87,7 @@ class OrderAction extends Piece_Unity_Service_FlowAction
         return 'valid';
     }
 
-    function onConfirmation()
+    public function onConfirmation()
     {
         $mainMenu = array('1' => 'ジャーマンポテトバーガー',
                           '2' => 'ポテトコロッケバーガー',
@@ -105,13 +102,13 @@ class OrderAction extends Piece_Unity_Service_FlowAction
                         '3' => 700
                         );
 
-        $viewElement = &$this->_context->getViewElement();
+        $viewElement = $this->_context->getViewElement();
         $viewElement->setElement('main',  $mainMenu[$this->_order->main]);
         $viewElement->setElement('side',  $sideMenu[$this->_order->side]);
         $viewElement->setElement('price', $prices[$this->_order->main]);
     }
 
-    function onRegistration()
+    public function onRegistration()
     {
         $mapper = Piece_ORM::getMapper('Orders');
         $mapper->insert($this->_order);
