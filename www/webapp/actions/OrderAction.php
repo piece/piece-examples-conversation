@@ -2,7 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 
 /**
- * PHP versions 4 and 5
+ * PHP versions 5
  *
  * Copyright (c) 2009 Piece Project, All rights reserved.
  *
@@ -27,10 +27,10 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    Piece_Examples_CRUD
+ * @package    Piece_Examples_Conversation
  * @copyright  2009 Piece Project
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    SVN: $Id$
+ * @version    Release: 1.0.0
  * @since      File available since Release 1.0.0
  */
 
@@ -39,7 +39,7 @@
 /**
  * Action class for the flow Order.
  *
- * @package    Piece_Examples_CRUD
+ * @package    Piece_Examples_Conversation
  * @copyright  2009 Piece Project
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
  * @version    Release: 1.0.0
