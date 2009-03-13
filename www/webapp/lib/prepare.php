@@ -47,6 +47,8 @@ set_include_path(realpath(dirname(__FILE__)) . PATH_SEPARATOR .
 
 require 'Stagehand/Autoload/PEAR.php';
 
+Stagehand_LegacyError_PEARErrorStack::enableConversion();
+
 // }}}
 // {{{ configureRuntime()
 
