@@ -44,5 +44,7 @@ actionState:
     activity:
       method: onRegistration
     transition:
-      - event: finish
+      - event: done
         nextState: Finish
+      - event: fail
+        nextState: Confirmation
