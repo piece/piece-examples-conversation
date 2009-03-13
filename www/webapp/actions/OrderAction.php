@@ -59,6 +59,18 @@ class OrderAction extends Piece_Unity_Service_FlowAction
      * @access private
      */
 
+    private static $_mainMenu = array('1' => 'ジャーマンポテトバーガー',
+                                      '2' => 'ポテトコロッケバーガー',
+                                      '3' => '肉じゃがバーガー'
+                                      );
+    private static $_sideMenu = array('1' => 'フライドポテト',
+                                      '2' => 'ポテトサラダ',
+                                      '3' => 'スイートポテト'
+                                      );
+    private static $_prices = array('1' => 650,
+                                    '2' => 600,
+                                    '3' => 700
+                                    );
     private $_order;
 
     /**#@-*/
@@ -89,23 +101,10 @@ class OrderAction extends Piece_Unity_Service_FlowAction
 
     public function onConfirmation()
     {
-        $mainMenu = array('1' => 'ジャーマンポテトバーガー',
-                          '2' => 'ポテトコロッケバーガー',
-                          '3' => '肉じゃがバーガー'
-                          );
-        $sideMenu = array('1' => 'フライドポテト',
-                          '2' => 'ポテトサラダ',
-                          '3' => 'スイートポテト'
-                          );
-        $prices = array('1' => 650,
-                        '2' => 600,
-                        '3' => 700
-                        );
-
         $viewElement = $this->_context->getViewElement();
-        $viewElement->setElement('main',  $mainMenu[$this->_order->main]);
-        $viewElement->setElement('side',  $sideMenu[$this->_order->side]);
-        $viewElement->setElement('price', $prices[$this->_order->main]);
+        $viewElement->setElement('main',  self::$_mainMenu[$this->_order->main]);
+        $viewElement->setElement('side',  self::$_sideMenu[$this->_order->side]);
+        $viewElement->setElement('price', self::$_prices[$this->_order->main]);
     }
 
     public function onRegistration()
