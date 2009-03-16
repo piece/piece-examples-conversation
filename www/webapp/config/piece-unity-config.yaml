@@ -42,7 +42,7 @@
     - name: flowMappings
       type: configuration
       value:
-        - url: /order.php
+        - uri: /order.php
           flowName: Order
           isExclusive: false
 
