@@ -1,11 +1,10 @@
--- $Id$
-
 CREATE TABLE orders (
   id serial,
   main integer NOT NULL,
   side integer NOT NULL,
-  rdate timestamp with time zone NOT NULL DEFAULT current_timestamp,
-  PRIMARY KEY(id)
+  created_at timestamp with time zone NOT NULL DEFAULT current_timestamp,
+  updated_at timestamp with time zone NOT NULL DEFAULT current_timestamp,
+  PRIMARY KEY (id)
 );
 
 /*
