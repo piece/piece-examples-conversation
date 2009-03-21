@@ -1,28 +1,42 @@
-#!/bin/sh
+#!/bin/bash
+######################################################################
+# file: bin/lpear
+# owner:
+# group:
+# permission: 755
+######################################################################
 
-SCRIPT_DIR=$(cd $(dirname $0) && pwd)
-TARGET_DIR=$(cd $(dirname $SCRIPT_DIR) && pwd)
-PHP_PEAR_INSTALL_DIR=$TARGET_DIR/imports/pear
+SCRIPT_DIR=`readlink -f $0 | xargs dirname`
+cd $SCRIPT_DIR
+cd ..
+TARGET_PATH=$PWD
 
-PHP_BIN=/usr/bin/php
-PEAR_BIN=/usr/bin/pear
-EXT_DIR=/usr/lib/php5/20060613+lfs
+export PHP_PEAR_INSTALL_DIR=$TARGET_PATH/imports/pear
+PHP_PEAR_BIN_DIR=$TARGET_PATH/bin
+LPEAR_PHP_INSTALL_DIR=/usr/bin
 
-if [ ! -f $SCRIPT_DIR/pear.ini ]; then
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set bin_dir $TARGET_DIR/bin user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set doc_dir $PHP_PEAR_INSTALL_DIR/docs user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set ext_dir $EXT_DIR user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set php_dir $PHP_PEAR_INSTALL_DIR user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set cache_dir $TARGET_DIR/tmp/pear/cache user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set cfg_dir $PHP_PEAR_INSTALL_DIR/cfg user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set data_dir $PHP_PEAR_INSTALL_DIR/data user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set download_dir $TARGET_DIR/tmp/pear/download user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set php_bin $PHP_BIN user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set temp_dir $TARGET_DIR/tmp/pear/temp user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set test_dir $PHP_PEAR_INSTALL_DIR/tests user
-    $PEAR_BIN -c $SCRIPT_DIR/pear.ini config-set www_dir $TARGET_DIR/www user
+if [ ! -f $SCRIPT_DIR/pear.conf ]; then
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set bin_dir $TARGET_PATH/bin user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set doc_dir $PHP_PEAR_INSTALL_DIR/docs user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set ext_dir $LPEAR_PHP_INSTALL_DIR/ext user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set php_dir $PHP_PEAR_INSTALL_DIR user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set cache_dir $TARGET_PATH/tmp/pear/cache user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set cfg_dir $PHP_PEAR_INSTALL_DIR/cfg user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set data_dir $PHP_PEAR_INSTALL_DIR/data user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set download_dir $TARGET_PATH/tmp/pear/download user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set php_bin $LPEAR_PHP_INSTALL_DIR/php user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set temp_dir $TARGET_PATH/tmp/pear/temp user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set test_dir $PHP_PEAR_INSTALL_DIR/tests user
+    $PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf config-set www_dir $TARGET_PATH/www user
 fi
 
-$PEAR_BIN -c $SCRIPT_DIR/pear.ini $*
+$PHP_PEAR_BIN_DIR/pear -c $SCRIPT_DIR/pear.conf $@
 
-exit $?
+# Local Variables:
+# mode: shell-script
+# coding: iso-8859-1
+# tab-width: 4
+# c-basic-offset: 4
+# c-hanging-comment-ender-p: nil
+# indent-tabs-mode: nil
+# End:
