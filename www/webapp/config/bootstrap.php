@@ -37,12 +37,11 @@
 error_reporting(E_ALL);
 
 $projectRoot = realpath(dirname(__FILE__) . '/../../..');
+
 set_include_path("$projectRoot/src" . PATH_SEPARATOR .
-                 "$projectRoot/imports/pear" . PATH_SEPARATOR .
-                 "$projectRoot/imports/pear/src" . PATH_SEPARATOR .
-                 "$projectRoot/imports/non-pear/spyc-0.2.5" . PATH_SEPARATOR .
-                 "$projectRoot/imports/non-pear/src"
+                 get_include_path()
                  );
+
 unset($projectRoot);
 
 require 'Stagehand/Autoload/PEAR.php';
