@@ -2,7 +2,7 @@
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 
 /**
- * PHP versions 5
+ * PHP version 5
  *
  * Copyright (c) 2009 Piece Project, All rights reserved.
  *
@@ -29,46 +29,41 @@
  *
  * @package    Piece_Examples_Conversation
  * @copyright  2009 Piece Project
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.0.0
- * @since      File available since Release 1.0.0
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    Release: @package_version@
+ * @since      File available since Release 0.1.0
  */
 
 error_reporting(E_ALL);
 
-set_include_path(realpath(dirname(__FILE__)) . PATH_SEPARATOR .
-                 realpath(dirname(__FILE__) . '/../actions') . PATH_SEPARATOR .
-                 realpath(dirname(__FILE__) . '/../../../src') . PATH_SEPARATOR .
-                 realpath(dirname(__FILE__) . '/../../../imports/pear') . PATH_SEPARATOR .
-                 realpath(dirname(__FILE__) . '/../../../imports/pear/src') . PATH_SEPARATOR .
-                 realpath(dirname(__FILE__) . '/../../../imports/non-pear/src') . PATH_SEPARATOR .
-                 realpath(dirname(__FILE__) . '/../../../imports/non-pear/spyc-0.2.5')
+$projectRoot = realpath(dirname(__FILE__) . '/../../..');
+set_include_path("$projectRoot/src" . PATH_SEPARATOR .
+                 "$projectRoot/imports/pear" . PATH_SEPARATOR .
+                 "$projectRoot/imports/pear/src" . PATH_SEPARATOR .
+                 "$projectRoot/imports/non-pear/spyc-0.2.5" . PATH_SEPARATOR .
+                 "$projectRoot/imports/non-pear/src"
                  );
+unset($projectRoot);
 
 require 'Stagehand/Autoload/PEAR.php';
 
-Stagehand_LegacyError_PEARErrorStack::enableConversion();
+Piece_Unity_Service_ExceptionHandler::register(new Piece_Unity_Service_ExceptionHandler_DebugInfo());
+// Piece_Unity_Service_ExceptionHandler::register(new Piece_Unity_Service_ExceptionHandler_InternalServerError());
+Piece_Unity_Service_ExceptionHandler::register(new Piece_Unity_Service_ExceptionHandler_ErrorLog());
+Piece_Unity_Service_ExceptionHandler::enable();
+Piece_Unity::setConfigurationCallback('configure');
 
-// }}}
-// {{{ configureRuntime()
-
-/**
- * @param Piece_Unity $runtime
- */
-function configureRuntime(Piece_Unity $runtime)
+function configure(Piece_Unity $runtime)
 {
-    $base = dirname(__FILE__) . '/..';
-    $runtime->configure("$base/config", "$base/cache");
-    $runtime->setConfiguration('Configurator_AppRoot',
-                               'appRoot',
-                               dirname(__FILE__) . '/../../htdocs'
-                               );
+    $appRoot = realpath(dirname(__FILE__) . '/..');
+    $runtime->configure("$appRoot/config", "$appRoot/cache");
+    $runtime->setConfiguration('Configurator_AppRoot', 'appRoot', $appRoot);
 }
 
 /*
  * Local Variables:
  * mode: php
- * coding: utf-8
+ * coding: iso-8859-1
  * tab-width: 4
  * c-basic-offset: 4
  * c-hanging-comment-ender-p: nil

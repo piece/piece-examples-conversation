@@ -30,13 +30,13 @@
  * @package    Piece_Examples_Conversation
  * @copyright  2009 Piece Project
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.0.0
- * @since      File available since Release 1.0.0
+ * @version    Release: @package_version@
+ * @since      File available since Release 0.1.0
  */
 
-require dirname(__FILE__) . '/../webapp/lib/prepare.php';
+require dirname(__FILE__) . '/../webapp/config/bootstrap.php';
 
-Piece_Unity::createRuntime('configureRuntime')->dispatch();
+Piece_Unity::createRuntime()->dispatch();
 
 /*
  * Local Variables:
