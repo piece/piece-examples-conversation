@@ -29,9 +29,9 @@
  *
  * @package    Piece_Examples_Conversation
  * @copyright  2009 Piece Project
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.0.0
- * @since      File available since Release 1.0.0
+ * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
+ * @version    Release: @package_version@
+ * @since      File available since Release 0.1.0
  */
 
 // {{{ OrderAction
@@ -41,16 +41,23 @@
  *
  * @package    Piece_Examples_Conversation
  * @copyright  2009 Piece Project
- * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: 1.0.0
- * @since      Class available since Release 1.0.0
+ * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
+ * @version    Release: @package_version@
+ * @since      Class available since Release 0.1.0
  */
 class OrderAction extends Piece_Unity_Service_FlowAction
 {
+
     // {{{ properties
 
     /**#@+
      * @access public
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
      */
 
     /**#@-*/
@@ -79,10 +86,14 @@ class OrderAction extends Piece_Unity_Service_FlowAction
      * @access public
      */
 
+    public function __construct()
+    {
+        $this->_order = Piece_ORM::createObject('Orders');
+    }
+
     public function onValidationMainMenu()
     {
-        $validation = $this->_context->getValidation();
-        if (!$validation->validate('MainMenu', $this->_order)) {
+        if (!$this->_context->getValidation()->validate('MainMenu', $this->_order)) {
             return 'invalid';
         }
 
@@ -91,8 +102,7 @@ class OrderAction extends Piece_Unity_Service_FlowAction
 
     public function onValidationSideMenu()
     {
-        $validation = $this->_context->getValidation();
-        if (!$validation->validate('SideMenu', $this->_order)) {
+        if (!$this->_context->getValidation()->validate('SideMenu', $this->_order)) {
             return 'invalid';
         }
 
@@ -109,14 +119,15 @@ class OrderAction extends Piece_Unity_Service_FlowAction
 
     public function onRegistration()
     {
-        try {
-            Piece_ORM::getMapper('Orders')->insert($this->_order);
-        } catch (Stagehand_LegacyError_PEARErrorStack_Exception $e) {
-            return 'fail';
-        }
-
+        Piece_ORM::getMapper('Orders')->insert($this->_order);
         return 'done';
     }
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
 
     /**#@-*/
 
@@ -134,7 +145,7 @@ class OrderAction extends Piece_Unity_Service_FlowAction
 /*
  * Local Variables:
  * mode: php
- * coding: iso-8859-1
+ * coding: utf-8
  * tab-width: 4
  * c-basic-offset: 4
  * c-hanging-comment-ender-p: nil
