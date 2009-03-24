@@ -29,14 +29,36 @@
  *
  * @package    Piece_Examples_Conversation
  * @copyright  2009 Piece Project
- * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @version    Release: @package_version@
  * @since      File available since Release 0.1.0
  */
 
-require dirname(__FILE__) . '/../webapp/config/bootstrap.php';
+error_reporting(E_ALL);
 
-Piece_Unity::createRuntime()->dispatch();
+$projectRoot = realpath(dirname(__FILE__) . '/../../..');
+set_include_path("$projectRoot/src" . PATH_SEPARATOR .
+                 "$projectRoot/imports/pear" . PATH_SEPARATOR .
+                 "$projectRoot/imports/pear/src" . PATH_SEPARATOR .
+                 "$projectRoot/imports/non-pear/spyc-0.2.5" . PATH_SEPARATOR .
+                 "$projectRoot/imports/non-pear/src"
+                 );
+unset($projectRoot);
+
+require 'Stagehand/Autoload/PEAR.php';
+
+Piece_Unity_Service_ExceptionHandler::register(new Piece_Unity_Service_ExceptionHandler_DebugInfo());
+// Piece_Unity_Service_ExceptionHandler::register(new Piece_Unity_Service_ExceptionHandler_InternalServerError());
+Piece_Unity_Service_ExceptionHandler::register(new Piece_Unity_Service_ExceptionHandler_ErrorLog());
+Piece_Unity_Service_ExceptionHandler::enable();
+Piece_Unity::setConfigurationCallback('configure');
+
+function configure(Piece_Unity $runtime)
+{
+    $appRoot = realpath(dirname(__FILE__) . '/..');
+    $runtime->configure("$appRoot/config", "$appRoot/cache");
+    $runtime->setConfiguration('Configurator_AppRoot', 'appRoot', $appRoot);
+}
 
 /*
  * Local Variables:

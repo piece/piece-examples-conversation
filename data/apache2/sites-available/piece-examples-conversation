@@ -1,0 +1,39 @@
+######################################################################
+# file: /etc/apache2/sites-available/piece-examples-conversation
+# owner: root
+# group: root
+# mode: 644
+######################################################################
+
+######################################################################
+# URL: http://piece-examples-conversation/
+# Description: Piece Framework Conversation Example
+######################################################################
+<VirtualHost *:80>
+    ServerName piece-examples-conversation
+    DocumentRoot "/data/www/piece-examples-conversation/www/htdocs"
+    CustomLog /var/log/apache2/piece-examples-conversation-80-access.log combined
+    ErrorLog /var/log/apache2/piece-examples-conversation-80-error.log
+
+    php_value mbstring.language Japanese
+    php_value mbstring.internal_encoding UTF-8
+    php_value mbstring.http_input auto
+    php_value mbstring.http_output pass
+    php_flag mbstring.encoding_translation On
+    php_value mbstring.substitute_character none
+    php_value mbstring.func_overload 0
+    php_value session.save_path "/data/www/piece-examples-conversation/www/webapp/sessions"
+
+    <Directory "/data/www/piece-examples-conversation/www/htdocs">
+        Options FollowSymLinks
+        Order allow,deny
+        Allow from all
+    </Directory>
+</VirtualHost>
+
+# Local Variables:
+# mode: apache-conf-generic
+# coding: iso-8859-1
+# tab-width: 4
+# indent-tabs-mode: nil
+# End:
