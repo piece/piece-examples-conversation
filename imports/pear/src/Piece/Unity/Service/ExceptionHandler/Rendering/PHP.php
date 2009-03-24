@@ -28,25 +28,89 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    Stagehand_HTTP_Status
+ * @package    Piece_Unity
+ * @subpackage Piece_Unity_Component_ExceptionHandler
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      File available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      File available since Release 0.1.0
  */
 
-// {{{ Stagehand_HTTP_Status_Exception
+// {{{ Piece_Unity_Service_ExceptionHandler_Rendering_PHP
 
 /**
- * An exception class for the Stagehand_HTTP_Status package.
- *
- * @package    Stagehand_HTTP_Status
+ * @package    Piece_Unity
+ * @subpackage Piece_Unity_Component_ExceptionHandler
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      Class available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      Class available since Release 0.1.0
  */
-class Stagehand_HTTP_Status_Exception extends Exception {}
+class Piece_Unity_Service_ExceptionHandler_Rendering_PHP
+{
+
+    // {{{ properties
+
+    /**#@+
+     * @access public
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access public
+     */
+
+    // }}}
+    // {{{ render()
+
+    /**
+     * @param string                  $file
+     * @param Piece_Unity_ViewElement $viewElement
+     */
+    public static function render($file, Piece_Unity_ViewElement $viewElement)
+    {
+        $rendering = new Piece_Unity_Service_Rendering_PHP();
+
+        ob_start();
+        $rendering->render($file, $viewElement);
+        $html = ob_get_contents();
+        ob_end_clean();
+
+        Stagehand_HTTP_Status::send(500);
+        header('Content-Type: text/html; charset=UTF-8');
+
+        echo $html;
+    }
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    /**#@-*/
+
+    // }}}
+}
 
 // }}}
 

@@ -28,32 +28,112 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    Stagehand_HTTP_Status
+ * @package    Stagehand_LegacyError
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      File available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      File available since Release 0.1.0
  */
 
-// {{{ Stagehand_HTTP_Status_Exception
+$oldErrorReportingLevel = error_reporting(error_reporting() & ~E_STRICT);
+require_once 'PEAR/ErrorStack.php';
+error_reporting($oldErrorReportingLevel);
+
+// {{{ Stagehand_LegacyError_PEARErrorStack
 
 /**
- * An exception class for the Stagehand_HTTP_Status package.
- *
- * @package    Stagehand_HTTP_Status
+ * @package    Stagehand_LegacyError
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      Class available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      Class available since Release 0.1.0
  */
-class Stagehand_HTTP_Status_Exception extends Exception {}
+class Stagehand_LegacyError_PEARErrorStack
+{
+
+    // {{{ properties
+
+    /**#@+
+     * @access public
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    private static $_oldCallback;
+
+    /**#@-*/
+
+    /**#@+
+     * @access public
+     */
+
+    // }}}
+    // {{{ toException()
+
+    /**
+     * @param array $error
+     * @throws Stagehand_LegacyError_Exception_Interfacexion
+     */
+    public static function toException(array $error)
+    {
+        throw new Stagehand_LegacyError_PEARErrorStack_Exception($error);
+    }
+
+    // }}}
+    // {{{ enableConversion()
+
+    /**
+     */
+    public static function enableConversion()
+    {
+        self::$_oldCallback = $GLOBALS['_PEAR_ERRORSTACK_DEFAULT_CALLBACK']['*'];
+        $GLOBALS['_PEAR_ERRORSTACK_DEFAULT_CALLBACK']['*'] =
+            array(__CLASS__, 'toException');
+    }
+
+    // }}}
+    // {{{ disableConversion()
+
+    /**
+     */
+    public static function disableConversion()
+    {
+        $GLOBALS['_PEAR_ERRORSTACK_DEFAULT_CALLBACK']['*'] = self::$_oldCallback;
+    }
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    /**#@-*/
+
+    // }}}
+}
 
 // }}}
 
 /*
  * Local Variables:
  * mode: php
- * coding: iso-8859-1
+ * coding: utf-8
  * tab-width: 4
  * c-basic-offset: 4
  * c-hanging-comment-ender-p: nil

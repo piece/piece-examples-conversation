@@ -28,32 +28,108 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    Stagehand_HTTP_Status
+ * @package    Stagehand_LegacyError
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      File available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      File available since Release 0.1.0
  */
 
-// {{{ Stagehand_HTTP_Status_Exception
+// {{{ Stagehand_LegacyError_PHPError
 
 /**
- * An exception class for the Stagehand_HTTP_Status package.
- *
- * @package    Stagehand_HTTP_Status
+ * @package    Stagehand_LegacyError
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      Class available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      Class available since Release 0.1.0
  */
-class Stagehand_HTTP_Status_Exception extends Exception {}
+class Stagehand_LegacyError_PHPError
+{
+
+    // {{{ properties
+
+    /**#@+
+     * @access public
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access public
+     */
+
+    // }}}
+    // {{{ toException()
+
+    /**
+     * @param integer $code
+     * @param string  $message
+     * @param string  $file
+     * @param integer $line
+     * @throws Stagehand_LegacyError_Exception_Interface
+     */
+    public static function toException($code, $message, $file, $line)
+    {
+        throw new Stagehand_LegacyError_PHPError_Exception($message, 0, $code, $file, $line);
+    }
+
+    // }}}
+    // {{{ enableConversion()
+
+    /**
+     * @param integer $errorReportingLevel
+     */
+    public static function enableConversion($errorReportingLevel = E_USER_ERROR)
+    {
+        set_error_handler(array(__CLASS__, 'toException'), $errorReportingLevel);
+    }
+
+    // }}}
+    // {{{ disableConversion()
+
+    /**
+     */
+    public static function disableConversion()
+    {
+        restore_error_handler();
+    }
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    /**#@-*/
+
+    // }}}
+}
 
 // }}}
 
 /*
  * Local Variables:
  * mode: php
- * coding: iso-8859-1
+ * coding: utf-8
  * tab-width: 4
  * c-basic-offset: 4
  * c-hanging-comment-ender-p: nil

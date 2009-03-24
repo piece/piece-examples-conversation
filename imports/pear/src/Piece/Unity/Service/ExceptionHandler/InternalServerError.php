@@ -28,27 +28,25 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    Stagehand_HTTP_Status
+ * @package    Piece_Unity
+ * @subpackage Piece_Unity_Component_ExceptionHandler
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.0.0
- * @see        Stagehand_HTTP_StatusTest
- * @since      File available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      File available since Release 0.1.0
  */
 
-// {{{ Stagehand_HTTP_StatusTest_MockStatus
+// {{{ Piece_Unity_Service_ExceptionHandler_InternalServerError
 
 /**
- * A class for unit tests.
- *
- * @package    Stagehand_HTTP_Status
+ * @package    Piece_Unity
+ * @subpackage Piece_Unity_Component_ExceptionHandler
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.0.0
- * @see        Stagehand_HTTP_StatusTest
- * @since      Class available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      Class available since Release 0.1.0
  */
-class Stagehand_HTTP_StatusTest_MockStatus extends Stagehand_HTTP_Status
+class Piece_Unity_Service_ExceptionHandler_InternalServerError implements Piece_Unity_Service_ExceptionHandler_Interface
 {
 
     // {{{ properties
@@ -69,25 +67,31 @@ class Stagehand_HTTP_StatusTest_MockStatus extends Stagehand_HTTP_Status
      * @access private
      */
 
-    private $_sentStatusLine;
-
     /**#@-*/
 
     /**#@+
      * @access public
      */
 
+    // }}}
+    // {{{ handle()
+
+    /**
+     * @param Exception $exception
+     */
+    public function handle(Exception $exception)
+    {
+        Piece_Unity_Service_ExceptionHandler_Rendering_PHP::render(
+            dirname(__FILE__) . '/../../../../../data/pear.piece-framework.com/Piece_Unity_Component_ExceptionHandler/' . basename(__FILE__),
+            new Piece_Unity_ViewElement()
+                                                                  );
+    }
+
     /**#@-*/
 
     /**#@+
      * @access protected
      */
-
-    protected function createStatusLine()
-    {
-        $this->_sentStatusLine = parent::createStatusLine();
-        return $this->_sentStatusLine;
-    }
 
     /**#@-*/
 

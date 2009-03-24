@@ -28,25 +28,43 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    Stagehand_HTTP_Status
+ * @package    Piece_Unity
+ * @subpackage Piece_Unity_Component_ExceptionHandler
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      File available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      File available since Release 0.1.0
  */
 
-// {{{ Stagehand_HTTP_StatusTest
+// {{{ Piece_Unity_Service_ExceptionHandler
 
 /**
- * Some tests for Stagehand_HTTP_Status.
+ * A class for exception handling.
  *
- * @package    Stagehand_HTTP_Status
+ * Piece_Unity_Component_ExceptionHandler provides a simple exception handling system
+ * which can be used in your bootstrap code as follows:
+ *
+ * webapp/config/bootstrap.php:
+ *
+ * <code>
+ * <?php
+ * ...
+ * Piece_Unity_Service_ExceptionHandler::register(new Piece_Unity_Service_ExceptionHandler_DebugInfo());
+ * Piece_Unity_Service_ExceptionHandler::register(new Piece_Unity_Service_ExceptionHandler_ErrorLog());
+ * Piece_Unity_Service_ExceptionHandler::enable();
+ * ...
+ * </code>
+ *
+ * The last one registered will be the first one called.
+ *
+ * @package    Piece_Unity
+ * @subpackage Piece_Unity_Component_ExceptionHandler
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      Class available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      Class available since Release 0.1.0
  */
-class Stagehand_HTTP_StatusTest extends PHPUnit_Framework_TestCase
+class Piece_Unity_Service_ExceptionHandler
 {
 
     // {{{ properties
@@ -67,34 +85,68 @@ class Stagehand_HTTP_StatusTest extends PHPUnit_Framework_TestCase
      * @access private
      */
 
+    private static $_exceptionHandlers = array();
+
     /**#@-*/
 
     /**#@+
      * @access public
      */
 
-    /**
-     * @test
-     */
-    public function sendStatusLine()
-    {
-        $_SERVER['SERVER_PROTOCOL'] = 'HTTP/1.1';
-        Stagehand_HTTP_Status::send(404);
+    // }}}
+    // {{{ register()
 
-        $this->assertAttributeEquals('HTTP/1.1 404 Not Found',
-                                     '_sentStatusLine',
-                                     'Stagehand_HTTP_Status'
-                                     );
+    /**
+     * @param Piece_Unity_Service_ExceptionHandler_Interface $exceptionHandler
+     */
+    public static function register(Piece_Unity_Service_ExceptionHandler_Interface $exceptionHandler)
+    {
+        self::$_exceptionHandlers[] = $exceptionHandler;
     }
 
+    // }}}
+    // {{{ enable()
+
     /**
-     * @test
-     * @expectedException Stagehand_HTTP_Status_Exception
      */
-    public function raiseAnExceptionIfAnUnknownStatusCodeIsGiven()
+    public static function enable()
     {
-        $_SERVER['SERVER_PROTOCOL'] = 'HTTP/1.1';
-        Stagehand_HTTP_Status::send(32);
+        Stagehand_LegacyError_PHPError::enableConversion();
+        Stagehand_LegacyError_PEARError::enableConversion();
+        Stagehand_LegacyError_PEARErrorStack::enableConversion();
+
+        set_exception_handler(array(__CLASS__, 'handle'));
+    }
+
+    // }}}
+    // {{{ disable()
+
+    /**
+     */
+    public static function disable()
+    {
+        restore_exception_handler();
+
+        Stagehand_LegacyError_PEARErrorStack::disableConversion();
+        Stagehand_LegacyError_PEARError::disableConversion();
+        Stagehand_LegacyError_PHPError::disableConversion();
+    }
+
+    // }}}
+    // {{{ handle()
+
+    /**
+     * @param Exception $exception
+     */
+    public static function handle(Exception $exception)
+    {
+        while (ob_get_level()) {
+            ob_end_clean();
+        }
+
+        foreach (self::$_exceptionHandlers as $exceptionHandler) {
+            $exceptionHandler->handle($exception);
+        }
     }
 
     /**#@-*/

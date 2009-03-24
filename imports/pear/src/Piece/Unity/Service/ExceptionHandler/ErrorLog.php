@@ -28,25 +28,80 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    Stagehand_HTTP_Status
+ * @package    Piece_Unity
+ * @subpackage Piece_Unity_Component_ExceptionHandler
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      File available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      File available since Release 0.1.0
  */
 
-// {{{ Stagehand_HTTP_Status_Exception
+// {{{ Piece_Unity_Service_ExceptionHandler_ErrorLog
 
 /**
- * An exception class for the Stagehand_HTTP_Status package.
+ * An exception handler to log the exception message by error_log().
  *
- * @package    Stagehand_HTTP_Status
+ * @package    Piece_Unity
+ * @subpackage Piece_Unity_Component_ExceptionHandler
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      Class available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      Class available since Release 0.1.0
  */
-class Stagehand_HTTP_Status_Exception extends Exception {}
+class Piece_Unity_Service_ExceptionHandler_ErrorLog implements Piece_Unity_Service_ExceptionHandler_Interface
+{
+
+    // {{{ properties
+
+    /**#@+
+     * @access public
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access public
+     */
+
+    // }}}
+    // {{{ handle()
+
+    /**
+     * @param Exception $exception
+     */
+    public function handle(Exception $exception)
+    {
+        error_log($exception->getMessage());
+    }
+
+    /**#@-*/
+
+    /**#@+
+     * @access protected
+     */
+
+    /**#@-*/
+
+    /**#@+
+     * @access private
+     */
+
+    /**#@-*/
+
+    // }}}
+}
 
 // }}}
 

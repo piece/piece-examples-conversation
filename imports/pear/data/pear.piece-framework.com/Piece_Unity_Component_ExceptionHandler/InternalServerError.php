@@ -28,35 +28,23 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  *
- * @package    Stagehand_HTTP_Status
+ * @package    Piece_Unity
+ * @subpackage Piece_Unity_Component_ExceptionHandler
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      File available since Release 1.0.0
+ * @version    Release: 0.1.0
+ * @since      File available since Release 0.1.0
  */
-
-// {{{ Stagehand_HTTP_Status_Exception
-
-/**
- * An exception class for the Stagehand_HTTP_Status package.
- *
- * @package    Stagehand_HTTP_Status
- * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
- * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.1.0
- * @since      Class available since Release 1.0.0
- */
-class Stagehand_HTTP_Status_Exception extends Exception {}
-
-// }}}
-
-/*
- * Local Variables:
- * mode: php
- * coding: iso-8859-1
- * tab-width: 4
- * c-basic-offset: 4
- * c-hanging-comment-ender-p: nil
- * indent-tabs-mode: nil
- * End:
- */
+?>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+  <head>
+    <title>500 Internal Server Error</title>
+  </head>
+  <body>
+    <h1>Internal Server Error</h1>
+    <p>The server encountered an internal error or misconfiguration and was unable to complete your request.</p>
+    <p>Please contact the server administrator, <?php echo $_SERVER['SERVER_ADMIN'] ?> and inform them of the time the error occurred, and anything you might have done that may have caused the error.</p>
+    <p>More information about this error may be available in the server error log.</p>
+  </body>
+</html>

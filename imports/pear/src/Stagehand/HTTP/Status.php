@@ -31,7 +31,7 @@
  * @package    Stagehand_HTTP_Status
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.0.0
+ * @version    Release: 1.1.0
  * @link       http://www.studyinghttp.net/cgi-bin/rfc.cgi?2616#Sec6.1.1
  * @since      File available since Release 1.0.0
  */
@@ -45,7 +45,7 @@
  * @package    Stagehand_HTTP_Status
  * @copyright  2009 KUBO Atsuhiro <kubo@iteman.jp>
  * @license    http://www.opensource.org/licenses/bsd-license.php  New BSD License
- * @version    Release: 1.0.0
+ * @version    Release: 1.1.0
  * @link       http://www.studyinghttp.net/cgi-bin/rfc.cgi?2616#Sec6.1.1
  * @since      Class available since Release 1.0.0
  */
@@ -70,7 +70,6 @@ class Stagehand_HTTP_Status
      * @access private
      */
 
-    private $_statusCode;
     private static $_statusCodes = array(100 => 'Continue',
                                          101 => 'Switching Protocols',
                                          200 => 'OK',
@@ -112,6 +111,7 @@ class Stagehand_HTTP_Status
                                          504 => 'Gateway Time-out',
                                          505 => 'HTTP Version not supported'
                                          );
+    private static $_sentStatusLine;
 
     /**#@-*/
 
@@ -120,32 +120,21 @@ class Stagehand_HTTP_Status
      */
 
     // }}}
-    // {{{ __construct
+    // {{{ send()
 
     /**
-     * Sets a status code.
+     * Sends a HTTP status line like "HTTP/1.1 404 Not Found".
      *
-     * @throws Stagehand_HTTP_Status_Exception
      * @param integer $statusCode
+     * @throws Stagehand_HTTP_Status_Exception
      */
-    public function __construct($statusCode)
+    public static function send($statusCode)
     {
         if (!array_key_exists($statusCode, self::$_statusCodes)) {
             throw new Stagehand_HTTP_Status_Exception("Unknown status code [ $statusCode ], be sure the status code is correct");
         }
 
-        $this->_statusCode = $statusCode;
-    }
-
-    // }}}
-    // {{{ send()
-
-    /**
-     * Sends a HTTP status line like "HTTP/1.1 404 Not Found".
-     */
-    public function send()
-    {
-        @header($this->createStatusLine());
+        @header(self::_createStatusLine($statusCode));
     }
 
     /**#@-*/
@@ -154,26 +143,29 @@ class Stagehand_HTTP_Status
      * @access protected
      */
 
-    // }}}
-    // {{{ createStatusLine()
-
-    /**
-     * Creates a HTTP status line like "HTTP/1.1 404 Not Found".
-     */
-    protected function createStatusLine()
-    {
-        return sprintf('%s %d %s',
-                       $_SERVER['SERVER_PROTOCOL'],
-                       $this->_statusCode,
-                       self::$_statusCodes[ $this->_statusCode ]
-                       );
-    }
-
     /**#@-*/
 
     /**#@+
      * @access private
      */
+
+    // }}}
+    // {{{ _createStatusLine()
+
+    /**
+     * Creates a HTTP status line like "HTTP/1.1 404 Not Found".
+     *
+     * @param integer $statusCode
+     */
+    private static function _createStatusLine($statusCode)
+    {
+        self::$_sentStatusLine = sprintf('%s %d %s',
+                                         $_SERVER['SERVER_PROTOCOL'],
+                                         $statusCode,
+                                         self::$_statusCodes[ $statusCode ]
+                                         );
+        return self::$_sentStatusLine;
+    }
 
     /**#@-*/
 
