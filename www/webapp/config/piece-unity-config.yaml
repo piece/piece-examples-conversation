@@ -1,7 +1,5 @@
-# $Id$
-
 ######################################################################
-# Copyright (c) Piece Project, All rights reserved.
+# Copyright (c) 2009 Piece Project, All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -29,16 +27,16 @@
   point:
     - name: actionDirectory
       type: configuration
-      value: ../webapp/actions
+      value: ./actions
     - name: cacheDirectory
       type: configuration
-      value: ../webapp/cache/flows
+      value: ./cache/flows
     - name: useFlowMappings
       type: configuration
       value: true
     - name: configDirectory
       type: configuration
-      value: ../webapp/config/flows
+      value: ./config/flows
     - name: flowMappings
       type: configuration
       value:
@@ -70,19 +68,19 @@
       value: Layout_Layout
     - name: templateDir
       type: configuration
-      value: ../webapp/templates
+      value: ./templates
     - name: compileDir
       type: configuration
-      value: ../webapp/compiled-templates
+      value: ./compiled-templates
 
 - name: Configurator_Validation
   point:
     - name: configDirectory
       type: configuration
-      value: ../webapp/config/validations
+      value: ./config/validations
     - name: cacheDirectory
       type: configuration
-      value: ../webapp/cache/validations
+      value: ./cache/validations
     - name: useUnderscoreAsDirectorySeparator
       type: configuration
       value: true
@@ -98,13 +96,13 @@
   point:
     - name: configDirectory
       type: configuration
-      value: ../webapp/config/orm
+      value: ./config/orm
     - name: cacheDirectory
       type: configuration
-      value: ../webapp/cache/orm
+      value: ./cache/orm
     - name: mapperConfigDirectory
       type: configuration
-      value: ../webapp/config/orm/mappers
+      value: ./config/orm/mappers
 
 # Local Variables:
 # mode: conf-colon
