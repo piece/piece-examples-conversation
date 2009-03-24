@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Piece_Examples_Conversation</name>
+ <channel>pear.piece-framework.com</channel>
+ <summary>A potato burger order application example using Piece_Unity</summary>
+ <description>Piece_Examples_Conversation provides an example application using Piece_Unity. This application focuses stateful conversation in ordering a potato burger with a potato side dish. And also this application is a reference implementation for Piece_Unity 1.x with PHP 5.</description>
+ <lead>
+  <name>KUBO Atsuhiro</name>
+  <user>iteman</user>
+  <email>kubo@iteman.jp</email>
+  <active>yes</active>
+ </lead>
+ <developer>
+  <name>MATSUFUJI Hideharu</name>
+  <user>matsufuji</user>
+  <email>matsufuji@iteman.jp</email>
+  <active>yes</active>
+ </developer>
+ <date>2009-03-25</date>
+ <time>04:28:04</time>
+ <version>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+ <notes>The first release of Piece_Examples_Conversation.</notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <dir name="data">
+    <dir name="apache2">
+     <dir name="sites-available">
+      <file name="piece-examples-conversation" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /data/apache2/sites-available -->
+    </dir> <!-- /data/apache2 -->
+    <dir name="schemas">
+     <dir name="mysql">
+      <file name="orders.ddl" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /data/schemas/mysql -->
+     <dir name="pgsql">
+      <file name="orders.ddl" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /data/schemas/pgsql -->
+    </dir> <!-- /data/schemas -->
+   </dir> <!-- /data -->
+   <dir name="doc">
+    <file name="LICENSE" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+   </dir> <!-- /doc -->
+   <dir name="www">
+    <dir name="htdocs">
+     <dir name="css">
+      <file name="application.css" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file name="common.css" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file name="print.css" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /www/htdocs/css -->
+     <dir name="images">
+      <file name="bg.gif" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file name="date_icon.gif" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file name="piece_footer.jpg" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file name="piece_header.jpg" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file name="quotes.gif" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /www/htdocs/images -->
+     <file name="order.php" role="data">
+      <tasks:replace from="@package_version@" to="version" type="package-info" />
+     </file>
+    </dir> <!-- /www/htdocs -->
+    <dir name="webapp">
+     <dir name="actions">
+      <file name="OrderAction.php" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /www/webapp/actions -->
+     <dir name="cache">
+      <dir name="flows">
+       <file name="README" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /www/webapp/cache/flows -->
+      <dir name="orm">
+       <file name="README" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /www/webapp/cache/orm -->
+      <dir name="validations">
+       <file name="README" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /www/webapp/cache/validations -->
+      <file name="README" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /www/webapp/cache -->
+     <dir name="compiled-templates">
+      <file name="README" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /www/webapp/compiled-templates -->
+     <dir name="config">
+      <dir name="flows">
+       <file name="Order.flow" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /www/webapp/config/flows -->
+      <dir name="orm">
+       <dir name="mappers">
+        <file name="Orders.yaml" role="data">
+         <tasks:replace from="@package_version@" to="version" type="package-info" />
+        </file>
+       </dir> <!-- /www/webapp/config/orm/mappers -->
+       <file name="piece-orm-config.yaml" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /www/webapp/config/orm -->
+      <dir name="validations">
+       <file name="MainMenu.yaml" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file name="SideMenu.yaml" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /www/webapp/config/validations -->
+      <file name="bootstrap.php" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file name="piece-unity-config.yaml" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /www/webapp/config -->
+     <dir name="sessions">
+      <file name="README" role="data">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /www/webapp/sessions -->
+     <dir name="templates">
+      <dir name="Layout">
+       <file name="Layout.html" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /www/webapp/templates/Layout -->
+      <dir name="Order">
+       <file name="Confirmation.html" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file name="Finish.html" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file name="MainMenu.html" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file name="SideMenu.html" role="data">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /www/webapp/templates/Order -->
+     </dir> <!-- /www/webapp/templates -->
+    </dir> <!-- /www/webapp -->
+   </dir> <!-- /www -->
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.3</min>
+   </pearinstaller>
+   <package>
+    <name>Piece_Unity</name>
+    <channel>pear.piece-framework.com</channel>
+    <min>1.7.1</min>
+   </package>
+   <package>
+    <name>Piece_Unity_Component_NullByteAttackPreventation</name>
+    <channel>pear.piece-framework.com</channel>
+    <min>1.0.0</min>
+   </package>
+   <package>
+    <name>Piece_Unity_Component_Flexy</name>
+    <channel>pear.piece-framework.com</channel>
+    <min>1.2.0</min>
+   </package>
+   <package>
+    <name>Piece_Unity_Component_PieceORM</name>
+    <channel>pear.piece-framework.com</channel>
+    <min>1.1.0</min>
+   </package>
+   <package>
+    <name>Piece_Unity_Component_ExceptionHandler</name>
+    <channel>pear.piece-framework.com</channel>
+    <min>0.1.0</min>
+   </package>
+   <package>
+    <name>Stagehand_Autoload</name>
+    <channel>pear.piece-framework.com</channel>
+    <min>0.1.0</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2009-03-25</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+   <notes>The first release of Piece_Examples_Conversation.</notes>
+  </release>
+ </changelog>
+</package>
