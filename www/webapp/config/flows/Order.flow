@@ -1,50 +1,50 @@
 firstState: MainMenu
 
+lastState:
+  name: Finish
+  view: Finish
+
 viewState:
   - name: MainMenu
     view: MainMenu
     transition:
       - event: selectMainMenu
-        nextState: ValidationMainMenu
+        nextState: IsValidForMainMenu
   - name: SideMenu
     view: SideMenu
     transition:
       - event: selectSideMenu
-        nextState: ValidationSideMenu
+        nextState: IsValidForSideMenu
   - name: Confirmation
     view: Confirmation
     activity:
       method: onConfirmation
     transition:
       - event: register
-        nextState: Registration
+        nextState: Register
       - event: reselect
         nextState: MainMenu
-  - name: Finish
-    view: Finish
 
 actionState:
-  - name: ValidationMainMenu
+  - name: Register
     activity:
-      method: onValidationMainMenu
-    transition:
-      - event: valid
-        nextState: SideMenu
-      - event: invalid
-        nextState: MainMenu
-  - name: ValidationSideMenu
-    activity:
-      method: onValidationSideMenu
-    transition:
-      - event: valid
-        nextState: Confirmation
-      - event: invalid
-        nextState: SideMenu
-  - name: Registration
-    activity:
-      method: onRegistration
+      method: onRegister
     transition:
       - event: done
         nextState: Finish
-      - event: fail
+  - name: IsValidForMainMenu
+    activity:
+      method: onIsValidForMainMenu
+    transition:
+      - event: invalid
+        nextState: MainMenu
+      - event: valid
+        nextState: SideMenu
+  - name: IsValidForSideMenu
+    activity:
+      method: onIsValidForSideMenu
+    transition:
+      - event: invalid
+        nextState: SideMenu
+      - event: valid
         nextState: Confirmation

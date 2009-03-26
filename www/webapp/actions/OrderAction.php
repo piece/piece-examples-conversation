@@ -91,24 +91,6 @@ class OrderAction extends Piece_Unity_Service_FlowAction
         $this->_order = Piece_ORM::createObject('Orders');
     }
 
-    public function onValidationMainMenu()
-    {
-        if (!$this->_context->getValidation()->validate('MainMenu', $this->_order)) {
-            return 'invalid';
-        }
-
-        return 'valid';
-    }
-
-    public function onValidationSideMenu()
-    {
-        if (!$this->_context->getValidation()->validate('SideMenu', $this->_order)) {
-            return 'invalid';
-        }
-
-        return 'valid';
-    }
-
     public function onConfirmation()
     {
         $viewElement = $this->_context->getViewElement();
@@ -117,7 +99,25 @@ class OrderAction extends Piece_Unity_Service_FlowAction
         $viewElement->setElement('price', self::$_prices[$this->_order->main]);
     }
 
-    public function onRegistration()
+    public function onIsValidForMainMenu()
+    {
+        if (!$this->_context->getValidation()->validate('MainMenu', $this->_order)) {
+            return 'invalid';
+        }
+
+        return 'valid';
+    }
+
+    public function onIsValidForSideMenu()
+    {
+        if (!$this->_context->getValidation()->validate('SideMenu', $this->_order)) {
+            return 'invalid';
+        }
+
+        return 'valid';
+    }
+
+    public function onRegister()
     {
         Piece_ORM::getMapper('Orders')->insert($this->_order);
         return 'done';
