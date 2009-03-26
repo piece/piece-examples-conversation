@@ -7,7 +7,7 @@
 
 ######################################################################
 # URL: http://piece-examples-conversation/
-# Description: Piece Framework Conversation Example
+# Description: Piece_Examples_Conversation
 ######################################################################
 <VirtualHost *:80>
     ServerName piece-examples-conversation
