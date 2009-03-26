@@ -19,8 +19,8 @@
   <email>matsufuji@iteman.jp</email>
   <active>yes</active>
  </developer>
- <date>2009-03-25</date>
- <time>04:28:04</time>
+ <date>2009-03-26</date>
+ <time>18:52:18</time>
  <version>
   <release>1.0.0</release>
   <api>1.0.0</api>
@@ -236,7 +236,7 @@
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2009-03-25</date>
+   <date>2009-03-26</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
    <notes>The first release of Piece_Examples_Conversation.</notes>
   </release>
